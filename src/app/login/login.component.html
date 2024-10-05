@@ -1,12 +1,13 @@
-<form>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="badgeNumberUser">N° de badge</label>
-        <input type="text" name="badgeNumberUser" id="badgeNumberUser">
+        <input type="text" [(ngModel)]="user.badgeNumber" required pattern="^[0-9]*$" name="badgeNumberUser"
+            id="badgeNumberUser">
     </div>
 
     <div class="form-group">
         <label for="NniUser">NNI</label>
-        <input type="text" name="NniUser" id="NniUser">
+        <input type="text" [(ngModel)]="user.nni" required pattern="^[a-zA-Z0-9]{8}$" name="NniUser" id="NniUser">
     </div>
 
     <div class="form-group">
@@ -15,6 +16,6 @@
     </div>
 
     <div class="form-group-btn">
-        <input type="button" value="Se connecter">
+        <button type="submit">Se connecter</button>
     </div>
 </form>

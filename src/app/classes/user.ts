@@ -1,7 +1,7 @@
 export class User {
-    private badgeNumber: string;
-    private nni: string;
-    private password: string;
+    badgeNumber: string;
+    nni: string;
+    password: string;
 
     constructor(badgeNumber: string, nni: string, password: string) {
         this.badgeNumber = badgeNumber;

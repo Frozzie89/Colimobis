@@ -1,14 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { User } from '../classes/user';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+    standalone: true,
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    imports: [FormsModule],
+    styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent  implements OnInit {
+export class LoginComponent implements OnInit {
 
-  constructor() { }
+    user!: User;
 
-  ngOnInit() {}
+    constructor() { }
 
+    ngOnInit() {
+        this.user = new User('', '', '')
+    }
+
+    onSubmit() {
+        console.log(this.user.toString());
+    }
 }
