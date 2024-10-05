@@ -1,0 +1,35 @@
+form {
+    margin: auto;
+}
+
+.form-group>* {
+    margin: 3px;
+}
+
+label {
+    display: inline-block;
+    width: 250px;
+    text-align: center;
+    border: 1px solid cyan;
+    color: white;
+    padding: 5px;
+}
+
+input:not([type=button]) {
+    width: 400px;
+    padding: 5px;
+    background-color: cyan;
+}
+
+input[type=button] {
+    width: 500px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group-btn {
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
