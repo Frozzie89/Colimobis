@@ -1,0 +1,16 @@
+export class User {
+    private badgeNumber: string;
+    private nni: string;
+    private password: string;
+
+    constructor(badgeNumber: string, nni: string, password: string) {
+        this.badgeNumber = badgeNumber;
+        this.nni = nni;
+        this.password = password;
+    }
+
+    toString(): string {
+        return `[BadgeNumber = ${this.badgeNumber}, NNI = ${this.nni}, Password = ${this.password}]`
+    }
+
+}
