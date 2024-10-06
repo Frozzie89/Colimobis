@@ -26,7 +26,7 @@
         <input type="password" [(ngModel)]="user.password" name="passwordUser" id="passwordUser" required
             #passwordUser="ngModel">
         <div *ngIf="passwordUser.invalid && passwordUser.touched">
-            <div class="error-msg" *ngIf="nniUser.errors?.['required']">Ce champ est requis</div>
+            <div class="error-msg" *ngIf="passwordUser.errors?.['required']">Ce champ est requis</div>
         </div>
     </div>
 
