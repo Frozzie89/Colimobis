@@ -1,25 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { User } from '../classes/user';
+import { NgIf } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
     standalone: true,
     selector: 'app-login',
     templateUrl: './login.component.html',
-    imports: [FormsModule],
+    imports: [FormsModule, NgIf],
     styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
 
     user!: User;
 
-    constructor() { }
+    constructor(private route: Router) { }
 
     ngOnInit() {
-        this.user = new User('', '', '')
+        this.user = new User()
     }
 
-    onSubmit() {
-        console.log(this.user.toString());
+    onSubmit(form: NgForm) {
+        if (form.valid) {
+            this.route.navigate(['regime-search'])
+        }
     }
 }
