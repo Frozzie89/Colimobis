@@ -1,3 +1,36 @@
-<p>
-  login works!
-</p>
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <div class="form-group">
+        <label for="badgeNumberUser">N° de badge</label>
+        <input type="text" [(ngModel)]="user.badgeNumber" required pattern="^[0-9]*$" name="badgeNumberUser"
+            id="badgeNumberUser" #badgeNumberUser="ngModel">
+        <div *ngIf="badgeNumberUser.invalid && badgeNumberUser.touched">
+            <div class="error-msg" *ngIf="badgeNumberUser.errors?.['required']">Ce champ est requis</div>
+            <div class="error-msg" *ngIf="badgeNumberUser.errors?.['pattern']">Seuls les chiffres sont autorisés</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="NniUser">NNI</label>
+        <input type="text" [(ngModel)]="user.nni" required pattern="^[a-zA-Z0-9]{8}$" name="NniUser" id="NniUser"
+            #nniUser="ngModel">
+        <div *ngIf="nniUser.invalid && nniUser.touched">
+            <div class="error-msg" *ngIf="nniUser.errors?.['required']">Ce champ est requis</div>
+            <div class="error-msg" *ngIf="nniUser.errors?.['pattern']">Doit être exactement 8 caractères alphanumériques
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="passwordUser">Mot de passe Sésame</label>
+        <input type="password" [(ngModel)]="user.password" name="passwordUser" id="passwordUser" required
+            #passwordUser="ngModel">
+        <div *ngIf="passwordUser.invalid && passwordUser.touched">
+            <div class="error-msg" *ngIf="passwordUser.errors?.['required']">Ce champ est requis</div>
+        </div>
+    </div>
+
+    <div class="form-group-btn">
+        <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+    </div>
+</form>
