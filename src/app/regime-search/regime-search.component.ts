@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-regime-search',
-  templateUrl: './regime-search.component.html',
-  styleUrls: ['./regime-search.component.scss'],
+    standalone: true,
+    selector: 'app-regime-search',
+    templateUrl: './regime-search.component.html',
+    imports: [FormsModule],
+    styleUrls: ['./regime-search.component.scss'],
 })
-export class RegimeSearchComponent  implements OnInit {
+export class RegimeSearchComponent implements OnInit {
 
-  constructor() { }
+    regimeId: string = ''
 
-  ngOnInit() {}
+    constructor() { }
+
+    ngOnInit() { }
 
 }
