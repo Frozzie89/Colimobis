@@ -5,7 +5,7 @@ export class Regime {
     rf: string
     label: string
 
-    constructor(id: string = '', requestNumber: string = '', ot: number = 0, rf: string = '', label: string) {
+    constructor(id: string = '', requestNumber: string = '', ot: number = 0, rf: string = '', label: string = '') {
         this.id = id
         this.requestNumber = requestNumber
         this.ot = ot
