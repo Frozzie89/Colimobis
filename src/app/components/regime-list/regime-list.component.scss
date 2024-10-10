@@ -1,5 +1,4 @@
 table {
-    margin: auto;
     table-layout: fixed;
     width: 500px;
 }
@@ -44,4 +43,19 @@ tr:nth-child(even) {
 
 .label-col {
     width: 400px;
+}
+
+.container {
+    margin: auto;
+}
+
+.regime-form {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+label {
+    color: white;
+    font-weight: bold;
 }
