@@ -31,7 +31,7 @@ jobs:
 
       # Install Capacitor Android dependencies
       - name: Install Android SDK dependencies
-        run: npm run cap sync android
+        run: npx cap sync android
 
       # Set up Java for Android build
       - name: Set up Java
