@@ -4,21 +4,20 @@ import { IonicModule } from '@ionic/angular';
 import { RegimeListComponent } from './regime-list.component';
 
 describe('RegimeListComponent', () => {
-  let component: RegimeListComponent;
-  let fixture: ComponentFixture<RegimeListComponent>;
+    let component: RegimeListComponent;
+    let fixture: ComponentFixture<RegimeListComponent>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ RegimeListComponent ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+    beforeEach(waitForAsync(() => {
+        TestBed.configureTestingModule({
+            imports: [IonicModule.forRoot(), RegimeListComponent]
+        }).compileComponents();
 
-    fixture = TestBed.createComponent(RegimeListComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+        fixture = TestBed.createComponent(RegimeListComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    }));
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });
