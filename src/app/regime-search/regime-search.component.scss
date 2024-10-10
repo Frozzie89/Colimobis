@@ -1,0 +1,36 @@
+form {
+    margin: auto;
+}
+
+.form-group>* {
+    margin: 3px;
+}
+
+input {
+    width: 400px;
+    padding: 5px;
+}
+
+.form-title {
+    text-align: right;
+    color: white;
+}
+
+.validator-button {
+    text-align: right;
+    width: 200px;
+}
+
+.form-group-btn {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+}
+
+.one-line {
+    display: flex;
+}
