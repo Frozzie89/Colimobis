@@ -1,6 +1,7 @@
 table {
     table-layout: fixed;
-    width: 500px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 table,
@@ -8,12 +9,15 @@ th,
 td {
     border: 1px white solid;
     border-collapse: collapse;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 th,
 td {
     padding: 5px;
     text-align: left;
+    min-width: 200px;
 }
 
 tr:nth-child(odd) {
@@ -47,6 +51,7 @@ tr:nth-child(even) {
 
 .container {
     margin: auto;
+    overflow-x: scroll;
 }
 
 .regime-form {
