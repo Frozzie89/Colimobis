@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegimeSearchComponent } from './regime-search/regime-search.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegimeSearchComponent } from './components/regime-search/regime-search.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },

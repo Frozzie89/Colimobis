@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RegimeDataService } from '../service/regime-data.service';
+import { RegimeDataService } from '../../service/regime-data.service';
 
 @Component({
     standalone: true,
