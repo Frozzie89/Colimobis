@@ -1,0 +1,47 @@
+table {
+    margin: auto;
+    table-layout: fixed;
+    width: 500px;
+}
+
+table,
+th,
+td {
+    border: 1px white solid;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+}
+
+tr:nth-child(odd) {
+    color: white;
+}
+
+tr:nth-child(even) {
+    color: lightblue;
+}
+
+
+.regime-col {
+    width: 200px;
+}
+
+.demande-col {
+    width: 200px;
+}
+
+.OT-col {
+    width: 200px;
+}
+
+.RF-col {
+    width: 200px;
+}
+
+.label-col {
+    width: 400px;
+}
