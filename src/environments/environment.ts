@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+    production: false,
+    regimePaths: {
+        android: '/storage/emulated/0/Documents/colimobis/regime.json'
+    },
+    localStorage: {
+        regimes: 'regimes'
+    }
 };
 
 /*

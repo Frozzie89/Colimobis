@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RegimeDataService } from '../service/regime-data.service';
 
 @Component({
     standalone: true,
@@ -12,8 +13,13 @@ export class RegimeSearchComponent implements OnInit {
 
     regimeId: string = ''
 
-    constructor() { }
+    constructor(
+        private regimeService: RegimeDataService
+    ) { }
 
-    ngOnInit() { }
+    ngOnInit() {
+        console.log(this.regimeService.regimeList);
+
+    }
 
 }
