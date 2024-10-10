@@ -8,9 +8,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
+      # Checkout the repository with the specified branch
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }} # Check out the branch that triggered the workflow
 
       # Set up Node.js environment
       - name: Set up Node.js
@@ -24,7 +26,8 @@ jobs:
 
       # Build the Ionic app
       - name: Build Ionic app
-        run: npm run build
+        run: |
+          npm run build
 
       # Install Capacitor Android dependencies
       - name: Install Android SDK dependencies
