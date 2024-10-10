@@ -11,15 +11,18 @@ import { RegimeDataService } from '../service/regime-data.service';
 })
 export class RegimeSearchComponent implements OnInit {
 
-    regimeId: string = ''
-
     constructor(
         private regimeService: RegimeDataService
     ) { }
 
     ngOnInit() {
-        console.log(this.regimeService.regimeList);
 
+    }
+
+    queryRegimes(regimeId: string): void {
+        const foundRegimes = this.regimeService.regimeList.filter(regime => regime.id.includes(regimeId))
+
+        console.log(foundRegimes);
     }
 
 }
