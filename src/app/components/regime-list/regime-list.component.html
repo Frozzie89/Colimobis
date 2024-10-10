@@ -1,3 +1,20 @@
-<p>
-  regime-list works!
-</p>
+<table>
+    <thead>
+        <tr>
+            <th>Régime/A2X</th>
+            <th>Demande</th>
+            <th>OT</th>
+            <th>RF</th>
+            <th>Libéllé de l'attestation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let regime of regimeList">
+            <td>{{regime.id}}</td>
+            <td>{{regime.requestNumber}}</td>
+            <td>{{regime.ot}}</td>
+            <td>{{regime.rf}}</td>
+            <td>{{regime.label}}</td>
+        </tr>
+    </tbody>
+</table>
