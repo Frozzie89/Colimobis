@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Regime } from 'src/app/classes/regime';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 
@@ -17,6 +17,7 @@ export class RegimeListComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
+        private router: Router,
         private regimeService: RegimeDataService
     ) { }
 
@@ -25,4 +26,7 @@ export class RegimeListComponent implements OnInit {
         this.regimeList = this.regimeService.regimeList.filter(regime => regime.id.includes(search))
     }
 
+    moveBack() {
+        this.router.navigate(['regime-search'])
+    }
 }
