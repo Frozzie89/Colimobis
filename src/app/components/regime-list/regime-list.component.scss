@@ -1,0 +1,81 @@
+table {
+    table-layout: fixed;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+table,
+th,
+td {
+    border: 1px white solid;
+    border-collapse: collapse;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+    min-width: 200px;
+}
+
+tr:nth-child(odd) {
+    color: white;
+}
+
+tr:nth-child(even) {
+    color: lightblue;
+}
+
+
+.regime-col {
+    width: 200px;
+}
+
+.demande-col {
+    width: 200px;
+}
+
+.OT-col {
+    width: 200px;
+}
+
+.RF-col {
+    width: 200px;
+}
+
+.label-col {
+    width: 400px;
+}
+
+.container {
+    margin: auto;
+    overflow-x: scroll;
+}
+
+.regime-form {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+}
+
+.return-btn {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.return-btn>button {
+    text-align: right;
+    width: 100px;
+    height: 40px;
+    padding: 5px;
+    font-weight: bold;
+    color: darkblue;
+}

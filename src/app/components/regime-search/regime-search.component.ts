@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { RegimeDataService } from '../../service/regime-data.service';
+import { Router } from '@angular/router';
 
 @Component({
     standalone: true,
@@ -12,7 +12,7 @@ import { RegimeDataService } from '../../service/regime-data.service';
 export class RegimeSearchComponent implements OnInit {
 
     constructor(
-        private regimeService: RegimeDataService
+        private router: Router
     ) { }
 
     ngOnInit() {
@@ -20,9 +20,7 @@ export class RegimeSearchComponent implements OnInit {
     }
 
     queryRegimes(regimeId: string): void {
-        const foundRegimes = this.regimeService.regimeList.filter(regime => regime.id.includes(regimeId))
-
-        console.log(foundRegimes);
+        this.router.navigate(['regime-list', regimeId])
     }
 
 }

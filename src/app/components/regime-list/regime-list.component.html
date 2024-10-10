@@ -1,0 +1,43 @@
+<div class="container">
+    <form class="regime-form">
+        <div>
+            <input type="radio" name="regime-action" id="remove-action">
+            <label for="remove-action">Retirer une attestation</label>
+        </div>
+
+        <div>
+            <input type="radio" name="regime-action" id="yield-action">
+            <label for="yield-action">Rendre une attestation</label>
+        </div>
+
+        <div>
+            <input type="radio" name="regime-action" id="print-action">
+            <label for="print-action">Imprimmer un duplicata d'attestation</label>
+        </div>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="regime-col">Régime/A2X</th>
+                <th class="demande-col">Demande</th>
+                <th class="OT-col">OT</th>
+                <th class="RF-col">RF</th>
+                <th class="label-col">Libéllé de l'attestation</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let regime of regimeList">
+                <td class="regime-col">{{regime.id}}</td>
+                <td class="demande-col">{{regime.requestNumber}}</td>
+                <td class="OT-col">{{regime.ot}}</td>
+                <td class="RF-col">{{regime.rf}}</td>
+                <td class="label-col">{{regime.label}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="return-btn">
+        <button (click)="moveBack()">Retour</button>
+    </div>
+</div>
