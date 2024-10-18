@@ -3,12 +3,14 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { User } from '../../classes/user';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
+import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+
 
 @Component({
     standalone: true,
     selector: 'app-login',
     templateUrl: './login.component.html',
-    imports: [FormsModule, NgIf],
+    imports: [FormsModule, NgIf, IonContent, IonGrid, IonRow, IonCol],
     styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {

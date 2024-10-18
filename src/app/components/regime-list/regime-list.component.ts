@@ -3,13 +3,15 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Regime } from 'src/app/classes/regime';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
+import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+
 
 @Component({
     standalone: true,
     selector: 'app-regime-list',
     templateUrl: './regime-list.component.html',
     styleUrls: ['./regime-list.component.scss'],
-    imports: [NgFor]
+    imports: [NgFor, IonContent, IonGrid, IonRow, IonCol]
 })
 export class RegimeListComponent implements OnInit {
 

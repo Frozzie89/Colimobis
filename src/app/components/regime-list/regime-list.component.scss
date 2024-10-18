@@ -1,7 +1,8 @@
 table {
     table-layout: fixed;
-    margin-left: 5px;
-    margin-right: 5px;
+    // margin-left: 5px;
+    // margin-right: 5px;
+    width: 100%;
 }
 
 table,
@@ -10,14 +11,16 @@ td {
     border: 1px white solid;
     border-collapse: collapse;
     overflow-x: auto;
-    white-space: nowrap;
 }
 
 th,
 td {
     padding: 5px;
     text-align: left;
-    min-width: 200px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    // min-width: 200px;
 }
 
 tr:nth-child(odd) {
@@ -30,23 +33,23 @@ tr:nth-child(even) {
 
 
 .regime-col {
-    width: 200px;
+    width: 10em;
 }
 
 .demande-col {
-    width: 200px;
+    width: 10em;
 }
 
 .OT-col {
-    width: 200px;
+    width: 10em;
 }
 
 .RF-col {
-    width: 200px;
+    width: 10em;
 }
 
 .label-col {
-    width: 400px;
+    width: 20em;
 }
 
 .container {
@@ -73,8 +76,8 @@ label {
 
 .return-btn>button {
     text-align: right;
-    width: 100px;
-    height: 40px;
+    // width: 100px;
+    // height: 40px;
     padding: 5px;
     font-weight: bold;
     color: darkblue;

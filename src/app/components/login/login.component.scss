@@ -1,14 +1,11 @@
 form {
-    margin: auto;
-}
-
-.form-group>* {
-    margin: 3px;
+    display: grid;
+    justify-content: center;
 }
 
 label {
     display: inline-block;
-    width: 250px;
+    width: 15em;
     text-align: center;
     border: 1px solid cyan;
     color: white;
@@ -16,13 +13,13 @@ label {
 }
 
 input:not([type=button]) {
-    width: 400px;
+    width: 25em;
     padding: 5px;
     background-color: cyan;
 }
 
 button {
-    width: 500px;
+    width: 30em;
     padding: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -35,6 +32,7 @@ button {
 }
 
 .error-msg {
+    padding: 3px;
     color: red;
     font-weight: bold;
 }
