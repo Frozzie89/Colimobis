@@ -4,9 +4,9 @@ export class Regime {
     ot: number
     rf: string
     label: string
-    state: regimeState
+    state: RegimeState
 
-    constructor(id: string = '', requestNumber: string = '', ot: number = 0, rf: string = '', label: string = '', state: regimeState = regimeState.RENDU_NON_TERMINE) {
+    constructor(id: string = '', requestNumber: string = '', ot: number = 0, rf: string = '', label: string = '', state: RegimeState = RegimeState.RETURNED_UNDONE) {
         this.id = id
         this.requestNumber = requestNumber
         this.ot = ot
@@ -22,6 +22,8 @@ export class Regime {
 }
 
 
-export enum regimeState {
-    AUTORISE, ERREUR, RENDU_NON_TERMINE
+export enum RegimeState {
+    AUTHORIZED = 'Autorisé',
+    ERROR = 'Erreur',
+    RETURNED_UNDONE = 'Rendu non-terminé'
 }
