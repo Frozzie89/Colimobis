@@ -16,7 +16,7 @@ export class Regime {
     }
 
     toString(): string {
-        return `[Id = ${this.id}, RequestNumber = ${this.requestNumber}, Ot = ${this.ot}, Rf = ${this.rf}, Label = ${this.label}]`
+        return `[Id = ${this.id}, RequestNumber = ${this.requestNumber}, Ot = ${this.ot}, Rf = ${this.rf}, Label = ${this.label}, State = ${this.state}]`
     }
 
 }
