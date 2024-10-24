@@ -1,7 +1,5 @@
 table {
     table-layout: fixed;
-    // margin-left: 5px;
-    // margin-right: 5px;
     width: 100%;
 }
 
@@ -20,7 +18,6 @@ td {
     word-wrap: break-word;
     overflow-wrap: break-word;
     white-space: normal;
-    // min-width: 200px;
 }
 
 tr:nth-child(odd) {
