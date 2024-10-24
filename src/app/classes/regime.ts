@@ -23,7 +23,8 @@ export class Regime {
 
 
 export enum RegimeState {
-    AUTHORIZED = 'Autorisé',
-    ERROR = 'Erreur',
-    RETURNED_UNDONE = 'Rendu non-terminé'
+    AUTHORIZED = 'AUTORISÉ',
+    ERROR = 'ERREUR',
+    RETURNED_UNDONE = 'RENDU NON-TERMINÉ',
+    DEMARRE = 'DÉMARRÉ'
 }
