@@ -4,18 +4,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Regime } from 'src/app/classes/regime';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
-
+import { FormsModule } from '@angular/forms';
 
 @Component({
     standalone: true,
     selector: 'app-regime-list',
     templateUrl: './regime-list.component.html',
     styleUrls: ['./regime-list.component.scss'],
-    imports: [NgFor, IonContent, IonGrid, IonRow, IonCol]
+    imports: [NgFor, FormsModule, IonContent, IonGrid, IonRow, IonCol]
 })
 export class RegimeListComponent implements OnInit {
 
     regimeList: Regime[] = []
+    regimeAction = -1
 
     constructor(
         private route: ActivatedRoute,
@@ -31,4 +32,21 @@ export class RegimeListComponent implements OnInit {
     moveBack() {
         this.router.navigate(['regime-search'])
     }
+
+    toAction(regime: Regime) {
+        switch (this.regimeAction) {
+            case RegimeActionForm.REMOVE_ACTION:
+                this.router.navigate(['action/regime-withdraw', regime.id])
+                break;
+            case RegimeActionForm.WITHDRAW_ACTION:
+                this.router.navigate(['action/regime-restore', regime.id])
+                break;
+        }
+    }
+}
+
+enum RegimeActionForm {
+    REMOVE_ACTION = 0,
+    WITHDRAW_ACTION,
+    PRINT_ACTION
 }
