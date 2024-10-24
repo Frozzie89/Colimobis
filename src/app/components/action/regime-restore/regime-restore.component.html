@@ -1,3 +1,28 @@
-<p>
-  regime-restore works!
-</p>
+<ion-content>
+    <app-regime-status [regime]="regime"></app-regime-status>
+
+    <form>
+        <p>En quittant votre chantier, vous rendez le matériel à l'exploitant</p>
+        <div class="radio-btns">
+
+            <div class="form-item">
+                <p>Ce matériel est disponible</p>
+                <input type="radio" name="equipment-status" id="equipment-status-yes">
+                <label for="equipment-status-yes">Oui</label>
+                <input type="radio" name="equipment-status" id="equipment-status-no">
+                <label for="equipment-status-no">Non</label>
+            </div>
+
+            <div class="form-list">
+                <p>Statut de l'activité</p>
+                <input type="radio" name="activity-status" id="activity-status-yes">
+                <label for="activity-status-yes">Oui</label>
+                <input type="radio" name="activity-status" id="activity-sta
+                .form-item {
+                    display: flex; // align-content: center;
+                }tus-no">
+                <label for="activity-status-no">Non</label>
+            </div>
+        </div>
+    </form>
+</ion-content>
