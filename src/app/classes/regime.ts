@@ -16,6 +16,10 @@ export class Regime {
     }
 
     static fromJson(data: any): Regime {
+        if (!data) {
+            throw new Error("data is undefined");
+        }
+
         return new Regime(
             data.id,
             data.requestNumber,
