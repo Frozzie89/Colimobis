@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonContent, IonGrid, IonCol, IonRow } from '@ionic/angular/standalone';
 import { RegimeStatusComponent } from "../../modules/regime-status/regime-status.component";
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { Regime } from 'src/app/classes/regime';
 
@@ -9,7 +9,7 @@ import { Regime } from 'src/app/classes/regime';
     selector: 'app-regime-restore',
     templateUrl: './regime-restore.component.html',
     styleUrls: ['./regime-restore.component.scss'],
-    imports: [IonContent, RegimeStatusComponent, IonGrid, IonCol, IonRow],
+    imports: [IonContent, RegimeStatusComponent, IonGrid, IonCol, IonRow, RouterModule],
     standalone: true
 })
 export class RegimeRestoreComponent implements OnInit {
@@ -18,7 +18,8 @@ export class RegimeRestoreComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private regimeService: RegimeDataService
+        private regimeService: RegimeDataService,
+        private router: Router
     ) { }
 
     ngOnInit() {
@@ -27,5 +28,9 @@ export class RegimeRestoreComponent implements OnInit {
         this.regime = Regime.fromJson(regimeJson)
     }
 
+    back(): void {
+        const searchTerm = history.state.searchTerm
+        this.router.navigate(['regime-list', searchTerm])
+    }
 
 }
