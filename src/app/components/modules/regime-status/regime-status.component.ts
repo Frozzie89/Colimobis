@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Regime } from 'src/app/classes/regime';
+import { Regime, RegimeState } from 'src/app/classes/regime';
 
 @Component({
     selector: 'app-regime-status',
@@ -10,12 +10,13 @@ import { Regime } from 'src/app/classes/regime';
 export class RegimeStatusComponent implements OnInit {
 
     @Input() regime: Regime = new Regime()
+    message!: string
 
     constructor(
     ) { }
 
     ngOnInit() {
-
+        this.message = this.regime.state === RegimeState.DEMARRE ? 'et sera couvert par le' : 'et couvert par le'
     }
 
 }

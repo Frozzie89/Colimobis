@@ -1,3 +1,26 @@
-<p>
-  regime-withdraw works!
-</p>
+<ion-content>
+    <app-regime-status [regime]="regime"></app-regime-status>
+    <app-regime-description [regime]="regime"></app-regime-description>
+
+    <div class="warning-msg">
+
+        <div class="icon-wrapper">
+            <div class="white-square">
+                <div class="orange-square"></div>
+            </div>
+        </div>
+
+        <p class="disclaimer">En déclarant de mon chantier, <strong>JE M'ENGAGE</strong> à vérifier les points clé de
+            mon
+            intervention <strong>AVANT</strong> démarage sur le terrain, car ils garantissent <strong>MA
+                SECURITÉ</strong>.
+        </p>
+        <div></div>
+    </div>
+
+    <div class="button-zone">
+        <button class="coli-btn return-btn" (click)="back()">Retour</button>
+        <button class="coli-btn report-btn">Déclarer le démarrage</button>
+    </div>
+
+</ion-content>

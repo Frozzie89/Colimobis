@@ -1,0 +1,45 @@
+.disclaimer {
+    color: white;
+    font-style: italic;
+}
+
+.white-square {
+    width: 34px;
+    height: 34px;
+    background-color: white;
+    position: relative;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.orange-square {
+    width: 27px;
+    height: 27px;
+    background-color: orange;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.warning-msg {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em;
+}
+
+.button-zone {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .return-btn {
+        margin-left: 1em;
+    }
+
+    .report-btn {
+        margin-right: 15em;
+    }
+}
