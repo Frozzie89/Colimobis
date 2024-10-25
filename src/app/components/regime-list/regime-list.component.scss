@@ -65,15 +65,11 @@ label {
     font-weight: bold;
 }
 
-.return-btn {
-    margin-top: 15px;
+.button-zone {
     display: flex;
     justify-content: center;
-}
 
-.return-btn>button {
-    text-align: right;
-    padding: 5px;
-    font-weight: bold;
-    color: darkblue;
+    button {
+        margin: 1em;
+    }
 }
