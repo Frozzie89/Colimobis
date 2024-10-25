@@ -29,4 +29,9 @@ export class RegimeWithdrawComponent implements OnInit {
         this.regime = Regime.fromJson(regimeJson)
     }
 
+    back(): void {
+        const searchTerm = history.state.searchTerm
+        this.router.navigate(['regime-list', searchTerm])
+    }
+
 }
