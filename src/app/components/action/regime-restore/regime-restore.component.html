@@ -1,3 +1,57 @@
-<p>
-  regime-restore works!
-</p>
+<ion-content>
+    <app-regime-status [regime]="regime"></app-regime-status>
+
+    <form>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <p>En quittant votre chantier, vous rendez le matériel à l'exploitant.</p>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
+                    <p>Ce matériel est disponible</p>
+                </ion-col>
+
+                <ion-col>
+                    <input type="radio" name="equipment-status" id="equipment-status-yes">
+                    <label for="equipment-status-yes">Oui</label>
+                </ion-col>
+
+                <ion-col>
+                    <input type="radio" name="equipment-status" id="equipment-status-no">
+                    <label for="equipment-status-no">Non</label>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col>
+                    <p>Statut de l'activité</p>
+                </ion-col>
+
+                <ion-col>
+                    <input type="radio" name="activity-status" id="activity-status-no">
+                    <label for="activity-status-no">Non terminée</label>
+                </ion-col>
+
+                <ion-col>
+                    <input type="radio" name="activity-status" id="activity-status-yes">
+                    <label for="activity-status-yes">Terminé</label>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="comment-zone">
+                <p>Commentaire</p>
+                <textarea name="form-comment" id="form-comment"></textarea>
+            </ion-row>
+
+        </ion-grid>
+    </form>
+
+    <div class="button-zone">
+        <button class="coli-btn" (click)="back()">Retour</button>
+        <button class="coli-btn">Quitter le chantier</button>
+    </div>
+
+</ion-content>

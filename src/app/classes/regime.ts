@@ -15,6 +15,21 @@ export class Regime {
         this.state = state
     }
 
+    static fromJson(data: any): Regime {
+        if (!data) {
+            throw new Error("data is undefined");
+        }
+
+        return new Regime(
+            data.id,
+            data.requestNumber,
+            data.ot,
+            data.rf,
+            data.label,
+            data.state as RegimeState
+        )
+    }
+
     toString(): string {
         return `[Id = ${this.id}, RequestNumber = ${this.requestNumber}, Ot = ${this.ot}, Rf = ${this.rf}, Label = ${this.label}, State = ${this.state}]`
     }
