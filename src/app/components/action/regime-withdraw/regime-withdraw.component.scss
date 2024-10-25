@@ -29,3 +29,17 @@
     justify-content: space-between;
     margin: 1em;
 }
+
+.button-zone {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .return-btn {
+        margin-left: 1em;
+    }
+
+    .report-btn {
+        margin-right: 15em;
+    }
+}
