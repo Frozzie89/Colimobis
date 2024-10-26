@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle } from '@ionic/angular/standalone';
 
 @Component({
@@ -12,8 +13,12 @@ export class HeaderComponent implements OnInit {
 
     @Input() title = ''
 
-    constructor() { }
+    constructor(private router: Router) { }
 
     ngOnInit() { }
+
+    logout() {
+        this.router.navigate(['login'])
+    }
 
 }
