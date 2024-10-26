@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StatusBar } from '@capacitor/status-bar';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
@@ -8,5 +9,14 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
     imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-    constructor() { }
+    constructor() {
+        this.initApp()
+    }
+
+
+    initApp() {
+        StatusBar.setBackgroundColor({ color: '#00008b' })
+        StatusBar.hide()
+        StatusBar.setOverlaysWebView({ overlay: true })
+    }
 }
