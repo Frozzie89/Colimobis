@@ -1,0 +1,16 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+ion-toolbar,
+ion-header {
+    --min-height: 30px
+}
+
+.right-side {
+    small {
+        margin-left: 2vh;
+    }
+}
