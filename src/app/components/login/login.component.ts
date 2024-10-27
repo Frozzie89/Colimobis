@@ -24,9 +24,20 @@ export class LoginComponent implements OnInit {
     }
 
     onSubmit(form: NgForm) {
+        let redirect: string
+
         if (form.valid) {
+            if (form.value['badgeNumberUser'] == '151515'
+                && form.value['NniUser'] == '15151515'
+                && form.value['passwordUser'] == 'Trihom123'
+            ) {
+                redirect = 'admin'
+            } else {
+                redirect = 'regime-search'
+            }
+
             form.resetForm()
-            this.route.navigate(['regime-search'])
+            this.route.navigate([redirect])
         }
     }
 }
