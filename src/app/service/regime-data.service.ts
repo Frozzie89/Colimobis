@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Regime } from '../classes/regime';
-import { Directory, Filesystem } from '@capacitor/filesystem';
+import { Directory, Encoding, Filesystem } from '@capacitor/filesystem';
 import { Capacitor } from '@capacitor/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -9,25 +9,23 @@ import { HttpClient } from '@angular/common/http';
     providedIn: 'root'
 })
 export class RegimeDataService {
-
     regimeList: Regime[] = []
 
     constructor(
-        private http: HttpClient
-    ) {
-        this.initializeService();
-    }
+        private http: HttpClient,
+    ) { }
 
-    private async initializeService() {
+    public async initializeService() {
         const platform = Capacitor.getPlatform();
 
         if (platform === 'android') {
+            console.log('Fetch from Android');
             this.loadDataFromAndroid();
         } else {
+            console.log('Fetch from Web');
             this.loadDataFromWeb();
         }
     }
-
 
     private loadDataFromWeb() {
         const storedData = localStorage.getItem(environment.localStorage.regimes);
@@ -50,17 +48,18 @@ export class RegimeDataService {
 
         Filesystem.readFile({
             path: environment.regimePaths.android,
-            directory: Directory.Documents
+            directory: Directory.Documents,
+            encoding: Encoding.UTF8
         }).then(async result => {
             if (typeof result.data === 'string') {
-                dataString = result.data;
+                dataString = result.data
             } else {
-                const blob = new Blob([result.data], { type: 'application/json' });
-                dataString = await this.convertBlobToString(blob);
+                const blob = new Blob([result.data], { type: 'application/json' })
+                dataString = await this.convertBlobToString(blob)
             }
 
             const parsedData = JSON.parse(dataString);
-            this.regimeList = parsedData.map((item: any) => Object.assign(new Regime(), item));
+            this.regimeList = parsedData.map((item: any) => Object.assign(new Regime(), item))
 
         }).catch(err => console.error('Error reading file on Android:', err))
     }
