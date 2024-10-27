@@ -5,17 +5,19 @@ import { Regime } from 'src/app/classes/regime';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { RegimeDescriptionComponent } from "../../modules/regime-description/regime-description.component";
+import { HeaderComponent } from "../../modules/header/header.component";
 
 @Component({
     selector: 'app-regime-withdraw',
     templateUrl: './regime-withdraw.component.html',
     styleUrls: ['./regime-withdraw.component.scss'],
-    imports: [IonContent, RegimeStatusComponent, RegimeDescriptionComponent],
+    imports: [IonContent, RegimeStatusComponent, RegimeDescriptionComponent, HeaderComponent],
     standalone: true
 })
 export class RegimeWithdrawComponent implements OnInit {
 
     regime!: Regime
+    title = 'Démarrer un chantier'
 
     constructor(
         private route: ActivatedRoute,

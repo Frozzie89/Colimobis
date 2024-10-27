@@ -2,8 +2,15 @@
 // http://ionicframework.com/docs/theming/
 
 :root {
-    --ion-background-color: darkblue;
+    --ion-background-color: #00008b;
+    --ion-toolbar-background: rgb(60, 177, 206);
 }
+
+ion-content {
+    padding: env(safe-area-inset);
+    --background: #00008b;
+}
+
 
 .coli-btn {
     padding: 1em;

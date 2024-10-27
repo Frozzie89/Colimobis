@@ -5,19 +5,21 @@ import { Regime } from 'src/app/classes/regime';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from "../modules/header/header.component";
 
 @Component({
     standalone: true,
     selector: 'app-regime-list',
     templateUrl: './regime-list.component.html',
     styleUrls: ['./regime-list.component.scss'],
-    imports: [NgFor, FormsModule, IonContent, IonGrid, IonRow, IonCol]
+    imports: [NgFor, FormsModule, IonContent, IonGrid, IonRow, IonCol, HeaderComponent]
 })
 export class RegimeListComponent implements OnInit {
 
     regimeList: Regime[] = []
     regimeAction = -1
     searchTerm = ''
+    title = 'Sélection d\'attestations'
 
     constructor(
         private route: ActivatedRoute,

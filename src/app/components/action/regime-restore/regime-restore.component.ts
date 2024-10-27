@@ -4,17 +4,19 @@ import { RegimeStatusComponent } from "../../modules/regime-status/regime-status
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { Regime } from 'src/app/classes/regime';
+import { HeaderComponent } from "../../modules/header/header.component";
 
 @Component({
     selector: 'app-regime-restore',
     templateUrl: './regime-restore.component.html',
     styleUrls: ['./regime-restore.component.scss'],
-    imports: [IonContent, RegimeStatusComponent, IonGrid, IonCol, IonRow, RouterModule],
+    imports: [IonContent, RegimeStatusComponent, IonGrid, IonCol, IonRow, RouterModule, HeaderComponent],
     standalone: true
 })
 export class RegimeRestoreComponent implements OnInit {
 
     regime!: Regime
+    title = 'Quitter un chantier'
 
     constructor(
         private route: ActivatedRoute,
