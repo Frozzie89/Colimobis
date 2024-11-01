@@ -6,13 +6,14 @@ import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from "../modules/header/header.component";
+import { RegimeTableComponent } from "../modules/regime-table/regime-table.component";
 
 @Component({
     standalone: true,
     selector: 'app-regime-list',
     templateUrl: './regime-list.component.html',
     styleUrls: ['./regime-list.component.scss'],
-    imports: [NgFor, FormsModule, IonContent, IonGrid, IonRow, IonCol, HeaderComponent]
+    imports: [NgFor, FormsModule, IonContent, IonGrid, IonRow, IonCol, HeaderComponent, RegimeTableComponent]
 })
 export class RegimeListComponent implements OnInit {
 
