@@ -18,5 +18,6 @@ export const routes: Routes = [
     { path: 'admin', component: AdminHubComponent },
     { path: 'admin/regime-manage', component: RegimeManageComponent },
     { path: 'admin/regime-manage/regime-form', component: RegimeFormComponent },
+    { path: 'admin/regime-manage/regime-form/:id/:action', component: RegimeFormComponent },
     { path: '**', component: LoginComponent }
 ];
