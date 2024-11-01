@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { IonButton, IonIcon } from '@ionic/angular/standalone';
 
 @Component({
-    selector: 'app-regime-table',
+    selector: 'module-regime-table',
     templateUrl: './regime-table.component.html',
     styleUrls: ['./regime-table.component.scss'],
     imports: [NgFor, NgIf, FormsModule, IonButton, IonIcon],

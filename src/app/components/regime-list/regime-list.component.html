@@ -1,4 +1,4 @@
-<app-header [title]="title"></app-header>
+<module-header [title]="title"></module-header>
 
 <ion-content class="ion-padding">
     <div class="container">
@@ -19,8 +19,8 @@
             </div>
         </form>
 
-        <app-regime-table [regimeList]="regimeList" [isEditable]="false"
-            (onAction)="toAction($event)"></app-regime-table>
+        <module-regime-table [regimeList]="regimeList" [isEditable]="false"
+            (onAction)="toAction($event)"></module-regime-table>
 
         <div class="button-zone">
             <button class="coli-btn" (click)="moveBack()">Retour</button>
