@@ -1,0 +1,48 @@
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border: 1px white solid;
+    border-collapse: collapse;
+    overflow-x: auto;
+}
+
+th,
+td {
+    padding: 5px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+tr:nth-child(odd) {
+    color: white;
+}
+
+tr:nth-child(even) {
+    color: lightblue;
+}
+
+.regime-col,
+.demande-col,
+.OT-col,
+.RF-col {
+    width: 10em;
+}
+
+.label-col {
+    width: 20em;
+}
+
+.action-col-content {
+    text-align: center;
+}
+
+.icon {
+    padding-left: 10px;
+    padding-right: 10px;
+}

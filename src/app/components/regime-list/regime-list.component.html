@@ -1,4 +1,4 @@
-<app-header [title]="title"></app-header>
+<module-header [title]="title"></module-header>
 
 <ion-content class="ion-padding">
     <div class="container">
@@ -19,26 +19,8 @@
             </div>
         </form>
 
-        <table>
-            <thead>
-                <tr>
-                    <th class="regime-col">Régime/A2X</th>
-                    <th class="demande-col">Demande</th>
-                    <th class="OT-col">OT</th>
-                    <th class="RF-col">RF</th>
-                    <th class="label-col">Libéllé de l'attestation</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let regime of regimeList" (click)="toAction(regime)">
-                    <td class="regime-col">{{regime.id}}</td>
-                    <td class="demande-col">{{regime.requestNumber}}</td>
-                    <td class="OT-col">{{regime.ot}}</td>
-                    <td class="RF-col">{{regime.rf}}</td>
-                    <td class="label-col">{{regime.label}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <module-regime-table [regimeList]="regimeList" [isEditable]="false"
+            (onAction)="toAction($event)"></module-regime-table>
 
         <div class="button-zone">
             <button class="coli-btn" (click)="moveBack()">Retour</button>

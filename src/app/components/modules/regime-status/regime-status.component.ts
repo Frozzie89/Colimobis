@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Regime, RegimeState } from 'src/app/classes/regime';
 
 @Component({
-    selector: 'app-regime-status',
+    selector: 'module-regime-status',
     templateUrl: './regime-status.component.html',
     styleUrls: ['./regime-status.component.scss'],
     standalone: true

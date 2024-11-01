@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <th class="action-col" *ngIf="isEditable">Action</th>
+            <th class="regime-col">Régime/A2X</th>
+            <th class="demande-col">Demande</th>
+            <th class="OT-col">OT</th>
+            <th class="RF-col">RF</th>
+            <th class="label-col">Libéllé de l'attestation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let regime of regimeList" (click)="actionEvent(regime)">
+            <td class="action-col-content" *ngIf="isEditable">
+                <ion-icon class="icon" name="create" size="large" (click)="editEvent(regime)"></ion-icon>
+                <ion-icon class="icon" name="trash" size="large" (click)="deleteEvent(regime)"></ion-icon>
+            </td>
+            <td class="regime-col">{{regime.id}}</td>
+            <td class="demande-col">{{regime.requestNumber}}</td>
+            <td class="OT-col">{{regime.ot}}</td>
+            <td class="RF-col">{{regime.rf}}</td>
+            <td class="label-col">{{regime.label}}</td>
+        </tr>
+    </tbody>
+</table>

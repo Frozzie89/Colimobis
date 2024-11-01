@@ -1,20 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AdminHubComponent } from './admin-hub.component';
+import { RegimeFormComponent } from './regime-form.component';
 import { provideRouter } from '@angular/router';
+import { provideHttpClient } from '@angular/common/http';
 
-describe('AdminHubComponent', () => {
-    let component: AdminHubComponent;
-    let fixture: ComponentFixture<AdminHubComponent>;
+describe('RegimeFormComponent', () => {
+    let component: RegimeFormComponent;
+    let fixture: ComponentFixture<RegimeFormComponent>;
 
     beforeEach(waitForAsync(() => {
         TestBed.configureTestingModule({
-            imports: [IonicModule.forRoot(), AdminHubComponent],
-            providers: [provideRouter([])]
+            imports: [IonicModule.forRoot(), RegimeFormComponent],
+            providers: [provideRouter([]), provideHttpClient()]
         }).compileComponents();
 
-        fixture = TestBed.createComponent(AdminHubComponent);
+        fixture = TestBed.createComponent(RegimeFormComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     }));

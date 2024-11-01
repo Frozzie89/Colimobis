@@ -1,0 +1,46 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+
+    * {
+        width: 80%;
+    }
+}
+
+.form-container h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: white
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+    color: #333;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-group button {
+    width: 100%;
+    margin-top: 5px;
+}

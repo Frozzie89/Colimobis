@@ -1,0 +1,15 @@
+<module-header [title]="title"></module-header>
+
+<ion-content class="ion-padding">
+    <div class="btn-container">
+        <button class="coli-btn" [routerLink]="'regime-form'">Ajouter un régime</button>
+    </div>
+
+    <module-regime-table [regimeList]="regimeList" [isEditable]="true" (onEdit)="editRegime($event)"
+        (onDelete)="deleteRegime($event)"></module-regime-table>
+
+    <div class="return-container">
+        <button class="coli-btn" [routerLink]="'../'">Retour</button>
+    </div>
+
+</ion-content>
