@@ -8,7 +8,7 @@
                 </ion-col>
                 <ion-col>
                     <input type="text" [(ngModel)]="user.badgeNumber" required pattern="^[0-9]*$" name="badgeNumberUser"
-                        id="badgeNumberUser" #badgeNumberUser="ngModel">
+                        id="badgeNumberUser" #badgeNumberUser="ngModel" (dblclick)="debugFillAdminform()">
                     <div *ngIf="badgeNumberUser.invalid && badgeNumberUser.touched">
                         <div class="error-msg" *ngIf="badgeNumberUser.errors?.['required']">Ce champ est requis
                         </div>
