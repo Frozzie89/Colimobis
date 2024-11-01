@@ -27,7 +27,6 @@ tr:nth-child(even) {
     color: lightblue;
 }
 
-
 .regime-col,
 .demande-col,
 .OT-col,
@@ -37,4 +36,8 @@ tr:nth-child(even) {
 
 .label-col {
     width: 20em;
+}
+
+.action-col-content {
+    text-align: center;
 }

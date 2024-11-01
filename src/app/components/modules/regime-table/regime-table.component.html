@@ -1,6 +1,7 @@
 <table>
     <thead>
         <tr>
+            <th class="action-col" *ngIf="isEditable">Action</th>
             <th class="regime-col">Régime/A2X</th>
             <th class="demande-col">Demande</th>
             <th class="OT-col">OT</th>
@@ -10,6 +11,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let regime of regimeList" (click)="actionEvent(regime)">
+            <td class="action-col-content" *ngIf="isEditable">
+                <ion-icon name="create" size="large"></ion-icon>
+                <ion-icon name="trash" size="large"></ion-icon>
+            </td>
             <td class="regime-col">{{regime.id}}</td>
             <td class="demande-col">{{regime.requestNumber}}</td>
             <td class="OT-col">{{regime.ot}}</td>

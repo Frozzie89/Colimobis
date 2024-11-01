@@ -19,7 +19,8 @@
             </div>
         </form>
 
-        <app-regime-table [regimeList]="regimeList" (onAction)="toAction($event)"></app-regime-table>
+        <app-regime-table [regimeList]="regimeList" [isEditable]="false"
+            (onAction)="toAction($event)"></app-regime-table>
 
         <div class="button-zone">
             <button class="coli-btn" (click)="moveBack()">Retour</button>
