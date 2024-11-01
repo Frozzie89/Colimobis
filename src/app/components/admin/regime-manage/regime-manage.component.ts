@@ -27,4 +27,12 @@ export class RegimeManageComponent implements OnInit {
         this.regimeList = this.regimeService.regimeList
     }
 
+    editRegime(regime: Regime) {
+        this.router.navigate(['admin/regime-manage/regime-form', { id: regime.id, action: 'edit' }])
+    }
+
+    deleteRegime(regime: Regime) {
+        console.log(regime);
+    }
+
 }

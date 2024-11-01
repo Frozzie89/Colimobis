@@ -12,8 +12,8 @@
     <tbody>
         <tr *ngFor="let regime of regimeList" (click)="actionEvent(regime)">
             <td class="action-col-content" *ngIf="isEditable">
-                <ion-icon class="icon" name="create" size="large"></ion-icon>
-                <ion-icon class="icon" name="trash" size="large"></ion-icon>
+                <ion-icon class="icon" name="create" size="large" (click)="editEvent(regime)"></ion-icon>
+                <ion-icon class="icon" name="trash" size="large" (click)="deleteEvent(regime)"></ion-icon>
             </td>
             <td class="regime-col">{{regime.id}}</td>
             <td class="demande-col">{{regime.requestNumber}}</td>

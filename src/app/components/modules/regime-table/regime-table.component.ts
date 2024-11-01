@@ -18,6 +18,8 @@ export class RegimeTableComponent implements OnInit {
     @Input() isEditable: boolean = false
 
     @Output() onAction = new EventEmitter<Regime>()
+    @Output() onDelete = new EventEmitter<Regime>()
+    @Output() onEdit = new EventEmitter<Regime>()
 
     constructor() { }
 
@@ -27,4 +29,11 @@ export class RegimeTableComponent implements OnInit {
         this.onAction.emit(regime)
     }
 
+    deleteEvent(regime: Regime): void {
+        this.onDelete.emit(regime)
+    }
+
+    editEvent(regime: Regime): void {
+        this.onEdit.emit(regime)
+    }
 }
