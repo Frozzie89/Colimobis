@@ -4,6 +4,7 @@ import { User } from '../../classes/user';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -38,6 +39,14 @@ export class LoginComponent implements OnInit {
 
             form.resetForm()
             this.route.navigate([redirect])
+        }
+    }
+
+    debugFillAdminform() {
+        if (!environment.production) {
+            this.user.badgeNumber = '151515'
+            this.user.nni = '15151515'
+            this.user.password = 'Trihom123'
         }
     }
 }
