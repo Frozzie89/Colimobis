@@ -4,12 +4,13 @@ import { RegimeTableComponent } from "../../modules/regime-table/regime-table.co
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { Regime } from 'src/app/classes/regime';
 import { HeaderComponent } from "../../modules/header/header.component";
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
     selector: 'app-regime-manage',
     templateUrl: './regime-manage.component.html',
     styleUrls: ['./regime-manage.component.scss'],
-    imports: [IonContent, RegimeTableComponent, HeaderComponent],
+    imports: [IonContent, RegimeTableComponent, HeaderComponent, RouterModule],
     standalone: true
 })
 export class RegimeManageComponent implements OnInit {
@@ -18,6 +19,7 @@ export class RegimeManageComponent implements OnInit {
     regimeList: Regime[] = []
 
     constructor(
+        private router: Router,
         private regimeService: RegimeDataService
     ) { }
 
