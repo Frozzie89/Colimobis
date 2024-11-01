@@ -5,6 +5,7 @@ import { RegimeListComponent } from './components/regime-list/regime-list.compon
 import { RegimeWithdrawComponent } from './components/action/regime-withdraw/regime-withdraw.component';
 import { RegimeRestoreComponent } from './components/action/regime-restore/regime-restore.component';
 import { AdminHubComponent } from './components/admin/admin-hub/admin-hub.component';
+import { RegimeManageComponent } from './components/admin/regime-manage/regime-manage.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,5 +15,6 @@ export const routes: Routes = [
     { path: 'action/regime-withdraw/:id', component: RegimeWithdrawComponent },
     { path: 'action/regime-restore/:id', component: RegimeRestoreComponent },
     { path: 'admin', component: AdminHubComponent },
+    { path: 'admin/regime-manage', component: RegimeManageComponent },
     { path: '**', component: LoginComponent }
 ];
