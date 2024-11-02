@@ -10,7 +10,7 @@ This app is intended for use on **Android** and has been developed and tested sp
 ## Prerequisites
 - Node.js (version 22.9.0 or above)
 - [Ionic CLI](https://www.npmjs.com/package/@ionic/cli)
-- Capacitor CLI (Comes with Ionic)
+- Capacitor CLI (comes with Ionic)
 
 ## Installation
 1. Clone the repository : 
@@ -32,8 +32,6 @@ To build and run the app locally without Docker, follow these steps :
     $ ionic serve
     ```
     This command will start a development server on http://localhost:8100, or another port if specified.
-
-
 
 ## Build and run with Docker
 1. Build and start the app :
@@ -61,8 +59,8 @@ To run the Ionic app as a native Android app using Capacitor:
 Initialize Capacitor in your project if not done already (this step only needs to be done once):
     ```sh
     $ npx cap init            # Initialize Capacitor
-    $ npx cap add android     # Add the android platform
-    $ npx cap sync android    # Syny the web assets and Capactitor configuration to the Android project
+    $ npx cap add android     # Add the Android platform
+    $ npx cap sync android    # Sync the web assets and Capacitor configuration to the Android project
     ```
 2. Run the app 
 
@@ -71,15 +69,13 @@ Initialize Capacitor in your project if not done already (this step only needs t
     $ npx cap open android
     ```
 
-
     2.2. without Android Studio (on a connected device)
     ```sh
     $ ionic cap run android --external -livereload --consolelogs --serverlogs
     ```
 
 ## Testing
-This project includes Jasmine test. This command runs tests on a Firefox browser
-
+This project includes Jasmine tests. This command runs tests on a Firefox browser
 ```sh
 $ npm run test:firefox
 ```
