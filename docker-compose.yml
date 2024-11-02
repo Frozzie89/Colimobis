@@ -1,0 +1,9 @@
+services:
+  colimobis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ${IMAGE_NAME}:${IMAGE_VERSION}
+    ports:
+      - "${PORT:-8100}:${PORT:-8100}"
+    command: ["ionic", "serve", "--host=${HOST:-127.0.0.1}", "--port=${PORT:-8100}", "--disableHostCheck"]
