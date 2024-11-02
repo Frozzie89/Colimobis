@@ -15,13 +15,13 @@ This app is intended for use on **Android** and has been developed and tested sp
 ## Installation
 1. Clone the repository : 
     ```sh
-    git clone https://github.com/Frozzie89/Colimobis.git
-    cd Colimobis
+    $ git clone https://github.com/Frozzie89/Colimobis.git
+    $ cd Colimobis
     ```
 
 2. Install dependencies : 
     ```sh
-    npm install
+    $ npm install
     ```
 
 ## Building and running the web-app
@@ -29,7 +29,7 @@ To build and run the app locally without Docker, follow these steps :
 
 1. Serve the app
     ```sh
-    ionic serve
+    $ ionic serve
     ```
     This command will start a development server on http://localhost:8100, or another port if specified.
 
