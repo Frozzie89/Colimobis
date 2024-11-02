@@ -42,8 +42,9 @@ To build and run the app locally without Docker, follow these steps :
     This command will build the Docker image, install dependencies and start the ionic development server.
 
 2. Access the app :
+    
     Open http://localhost:8100 in your browser, or replace 8100 with your configured port if customized.
-
+    
     You can configure the host and port by creating a .env file in the project root with the following variables : 
 
     ```txt
