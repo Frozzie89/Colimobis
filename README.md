@@ -57,7 +57,8 @@ To build and run the app locally without Docker, follow these steps :
 To run the Ionic app as a native Android app using Capacitor:
 
 1. Set up Capacitor :
-Initialize Capacitor in your project if not done already (this step only needs to be done once):
+    
+    Initialize Capacitor in your project if not done already (this step only needs to be done once):
     ```sh
     $ npx cap init            # Initialize Capacitor
     $ npx cap add android     # Add the Android platform
