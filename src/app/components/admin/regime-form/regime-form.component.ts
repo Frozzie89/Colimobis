@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonContent } from '@ionic/angular/standalone';
 import { HeaderComponent } from "../../modules/header/header.component";
-import { ActivatedRoute, Route, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Regime } from 'src/app/classes/regime';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
