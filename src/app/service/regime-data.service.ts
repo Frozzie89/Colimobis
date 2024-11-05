@@ -70,4 +70,18 @@ export class RegimeDataService {
             console.error('Error updating regime:', error);
         }
     }
+
+    async deleteRegime(id: string): Promise<void> {
+        try {
+            const existingDoc = await this.databaseService.database.get(id);
+
+            // Delete the document using `_id` and `_rev`
+            await this.databaseService.database.remove(existingDoc._id, existingDoc._rev);
+
+            this.getAllRegimes();
+        } catch (error) {
+            console.error('Error deleting regime:', error);
+        }
+    }
+
 }

@@ -32,7 +32,7 @@ export class RegimeManageComponent implements OnInit {
     }
 
     deleteRegime(regime: Regime) {
-        console.log(regime);
+        this.regimeService.deleteRegime(regime._id)
     }
 
 }
