@@ -24,15 +24,15 @@ export class RegimeManageComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.regimeList = this.regimeService.regimeList
+        this.regimeService.regimeList$.subscribe(regimes => this.regimeList = regimes)
     }
 
     editRegime(regime: Regime) {
-        this.router.navigate(['admin/regime-manage/regime-form', { id: regime.id, action: 'edit' }])
+        this.router.navigate(['admin/regime-manage/regime-form', { id: regime._id, action: 'edit' }])
     }
 
     deleteRegime(regime: Regime) {
-        console.log(regime);
+        this.regimeService.deleteRegime(regime._id)
     }
 
 }

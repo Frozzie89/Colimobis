@@ -27,8 +27,10 @@ export class RegimeWithdrawComponent implements OnInit {
 
     ngOnInit() {
         const id = this.route.snapshot.params['id']
-        const regimeJson = this.regimeService.regimeList.find(regime => regime.id.includes(id))
-        this.regime = Regime.fromJson(regimeJson)
+        this.regimeService.regimeList$.subscribe(regimes => {
+            const regimeJson = regimes.find(regime => regime._id.includes(id))
+            this.regime = Regime.fromJson(regimeJson)
+        })
     }
 
     back(): void {

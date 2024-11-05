@@ -1,5 +1,5 @@
 export class Regime {
-    id: string
+    _id: string
     requestNumber: string
     ot: number
     rf: string
@@ -7,7 +7,7 @@ export class Regime {
     state: RegimeState
 
     constructor(id: string = '', requestNumber: string = '', ot: number = 0, rf: string = '', label: string = '', state: RegimeState = RegimeState.RETURNED_UNDONE) {
-        this.id = id
+        this._id = id
         this.requestNumber = requestNumber
         this.ot = ot
         this.rf = rf
@@ -21,7 +21,7 @@ export class Regime {
         }
 
         return new Regime(
-            data.id,
+            data._id,
             data.requestNumber,
             data.ot,
             data.rf,
@@ -31,7 +31,7 @@ export class Regime {
     }
 
     toString(): string {
-        return `[Id = ${this.id}, RequestNumber = ${this.requestNumber}, Ot = ${this.ot}, Rf = ${this.rf}, Label = ${this.label}, State = ${this.state}]`
+        return `[Id = ${this._id}, RequestNumber = ${this.requestNumber}, Ot = ${this.ot}, Rf = ${this.rf}, Label = ${this.label}, State = ${this.state}]`
     }
 
 }

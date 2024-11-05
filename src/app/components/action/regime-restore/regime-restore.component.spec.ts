@@ -6,19 +6,23 @@ import { provideHttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
-import { RegimeState } from 'src/app/classes/regime';
+import { Regime, RegimeState } from 'src/app/classes/regime';
 
 describe('RegimeRestoreComponent', () => {
-    let component: RegimeRestoreComponent;
-    let fixture: ComponentFixture<RegimeRestoreComponent>;
-    let regimeService: RegimeDataService
+    let component: RegimeRestoreComponent
+    let fixture: ComponentFixture<RegimeRestoreComponent>
+    let regimeService: jasmine.SpyObj<RegimeDataService>
 
-    const mockRegimeJson = { id: '0', requestNumber: '1234', ot: 1, rf: '1', label: 'test', state: RegimeState.DEMARRE }
+    const mockRegimeJson = { _id: '0', requestNumber: '1234', ot: 1, rf: '1', label: 'test', state: RegimeState.DEMARRE }
 
     beforeEach(waitForAsync(() => {
+        const regimeServiceSpy = jasmine.createSpyObj('RegimeDataService', ['regimeList$'])
+        regimeServiceSpy.regimeList$ = of([mockRegimeJson])
+
         TestBed.configureTestingModule({
             imports: [IonicModule.forRoot(), RegimeRestoreComponent],
             providers: [
+                { provide: RegimeDataService, useValue: regimeServiceSpy },
                 {
                     provide: ActivatedRoute,
                     useValue: {
@@ -27,14 +31,14 @@ describe('RegimeRestoreComponent', () => {
                         }
                     }
                 }
-                , RegimeDataService, provideHttpClient()]
+                , provideHttpClient()]
         }).compileComponents();
+
+        spyOn(Regime, 'fromJson').and.callFake((json) => json ? json : new Regime());
 
         fixture = TestBed.createComponent(RegimeRestoreComponent);
         component = fixture.componentInstance;
-        regimeService = TestBed.inject(RegimeDataService)
-
-        spyOn(regimeService.regimeList, 'find').and.returnValue(mockRegimeJson)
+        regimeService = TestBed.inject(RegimeDataService) as jasmine.SpyObj<RegimeDataService>;
 
         fixture.detectChanges();
     }));
