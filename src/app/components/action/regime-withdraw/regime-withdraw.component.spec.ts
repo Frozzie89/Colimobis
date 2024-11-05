@@ -16,6 +16,9 @@ describe('RegimeWithdrawComponent', () => {
     const mockRegimeJson = { id: '0', requestNumber: '1234', ot: 1, rf: '1', label: 'test', state: RegimeState.DEMARRE }
 
     beforeEach(waitForAsync(() => {
+        const regimeServiceSpy = jasmine.createSpyObj('RegimeDataService', ['regimeList$'])
+        regimeServiceSpy.regimeList$ = of([mockRegimeJson])
+
         TestBed.configureTestingModule({
             imports: [IonicModule.forRoot(), RegimeWithdrawComponent],
             providers: [
@@ -32,9 +35,7 @@ describe('RegimeWithdrawComponent', () => {
 
         fixture = TestBed.createComponent(RegimeWithdrawComponent);
         component = fixture.componentInstance;
-        regimeService = TestBed.inject(RegimeDataService)
-
-        spyOn(regimeService.regimeList, 'find').and.returnValue(mockRegimeJson)
+        regimeService = TestBed.inject(RegimeDataService) as jasmine.SpyObj<RegimeDataService>;
 
         fixture.detectChanges();
     }));
