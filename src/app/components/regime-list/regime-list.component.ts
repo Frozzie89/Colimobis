@@ -30,7 +30,7 @@ export class RegimeListComponent implements OnInit {
 
     ngOnInit() {
         this.searchTerm = this.route.snapshot.params['search']
-        this.regimeList = this.regimeService.regimeList.filter(regime => regime.id.includes(this.searchTerm))
+        this.regimeService.regimeList$.subscribe(regimes => this.regimeList = regimes.filter(regime => regime._id?.includes(this.searchTerm)))
     }
 
     moveBack() {
@@ -40,10 +40,10 @@ export class RegimeListComponent implements OnInit {
     toAction(regime: Regime) {
         switch (this.regimeAction) {
             case RegimeActionForm.REMOVE_ACTION:
-                this.router.navigate(['action/regime-withdraw', regime.id], { state: { searchTerm: this.searchTerm } })
+                this.router.navigate(['action/regime-withdraw', regime._id], { state: { searchTerm: this.searchTerm } })
                 break;
             case RegimeActionForm.WITHDRAW_ACTION:
-                this.router.navigate(['action/regime-restore', regime.id], { state: { searchTerm: this.searchTerm } })
+                this.router.navigate(['action/regime-restore', regime._id], { state: { searchTerm: this.searchTerm } })
                 break;
         }
     }

@@ -28,8 +28,11 @@ export class RegimeFormComponent implements OnInit {
 
     ngOnInit() {
         const id = this.route.snapshot.params['id']
-        const regimeJson = this.regimeService.regimeList.find(regime => regime.id.includes(id)) || new Regime()
-        this.regime = Regime.fromJson(regimeJson)
+
+        this.regimeService.regimeList$.subscribe(regimes => {
+            const regimeJson = regimes.find(regime => regime._id?.includes(id)) || new Regime()
+            this.regime = Regime.fromJson(regimeJson)
+        })
 
         this.action = this.route.snapshot.params['action'] || 'create'
     }
@@ -39,12 +42,14 @@ export class RegimeFormComponent implements OnInit {
 
             switch (this.action) {
                 case 'create':
-                    this.regimeService.regimeList.push(this.regime)
+                    this.regimeService.save(this.regime)
+                    // this.regimeService.regimeList.push(this.regime)
                     break;
 
                 case 'edit':
-                    const index = this.regimeService.regimeList.findIndex(item => item.id === this.regime.id)
-                    this.regimeService.regimeList[index] = this.regime
+                    this.regimeService.update(this.regime)
+                    // const index = this.regimeService.regimeList.findIndex(item => item.id === this.regime.id)
+                    // this.regimeService.regimeList[index] = this.regime
                     break;
             }
 
