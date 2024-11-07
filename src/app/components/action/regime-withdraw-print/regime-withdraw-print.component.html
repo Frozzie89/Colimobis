@@ -1,0 +1,20 @@
+<module-header [title]="title"></module-header>
+
+<ion-content class="ion-padding">
+
+    <div class="warning">
+        <p>Votre activité est démarrée : Impression obligatoire</p>
+    </div>
+
+    <div class="button-list">
+        <button class="coli-btn coli-btn-w-icon" disabled="true">
+            <ion-icon name="list"></ion-icon>
+            <span>Voir mère</span>
+        </button>
+        <button class="coli-btn coli-btn-w-icon" [routerLink]="'../end'">
+            <ion-icon name="create"></ion-icon>
+            <span>Terminer</span>
+        </button>
+    </div>
+
+</ion-content>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { RegimeStatusComponent } from "../../modules/regime-status/regime-status.component";
 import { Regime } from 'src/app/classes/regime';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { RegimeDescriptionComponent } from "../../modules/regime-description/regime-description.component";
 import { HeaderComponent } from "../../modules/header/header.component";
@@ -11,12 +11,13 @@ import { HeaderComponent } from "../../modules/header/header.component";
     selector: 'app-regime-withdraw',
     templateUrl: './regime-withdraw.component.html',
     styleUrls: ['./regime-withdraw.component.scss'],
-    imports: [IonContent, IonIcon, RegimeStatusComponent, RegimeDescriptionComponent, HeaderComponent],
+    imports: [IonContent, IonIcon, RegimeStatusComponent, RegimeDescriptionComponent, RouterModule, HeaderComponent],
     standalone: true
 })
 export class RegimeWithdrawComponent implements OnInit {
 
     regime!: Regime
+    idRegime!: string
     title = 'Démarrer un chantier'
 
     constructor(
@@ -26,9 +27,9 @@ export class RegimeWithdrawComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        const id = this.route.snapshot.params['id']
+        this.idRegime = this.route.snapshot.params['id']
         this.regimeService.regimeList$.subscribe(regimes => {
-            const regimeJson = regimes.find(regime => regime._id.includes(id))
+            const regimeJson = regimes.find(regime => regime._id.includes(this.idRegime))
             this.regime = Regime.fromJson(regimeJson)
         })
     }

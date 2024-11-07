@@ -1,6 +1,6 @@
 <module-header [title]="title"></module-header>
 
-<ion-content>
+<ion-content class="ion-padding">
     <module-regime-status [regime]="regime"></module-regime-status>
     <module-regime-description [regime]="regime"></module-regime-description>
 
@@ -25,7 +25,7 @@
             <ion-icon name="arrow-back-circle"></ion-icon>
             <span>Retour</span>
         </button>
-        <button class="coli-btn coli-btn-w-icon report-btn">
+        <button class="coli-btn coli-btn-w-icon report-btn" [routerLink]="'print'">
             <ion-icon name="create"></ion-icon>
             <span>Déclarer le démarrage</span>
         </button>

@@ -11,7 +11,7 @@ import { Regime, RegimeState } from 'src/app/classes/regime';
 describe('RegimeWithdrawComponent', () => {
     let component: RegimeWithdrawComponent;
     let fixture: ComponentFixture<RegimeWithdrawComponent>;
-    let regimeService: RegimeDataService
+    let regimeService: RegimeDataService;
 
     const mockRegimeJson = { _id: '0', requestNumber: '1234', ot: 1, rf: '1', label: 'test', state: RegimeState.DEMARRE }
 
