@@ -11,10 +11,6 @@ label {
     color: white;
 }
 
-p {
-    line-height: 0.1;
-}
-
 textarea {
     resize: none;
     width: 100%;
@@ -37,4 +33,14 @@ ion-row {
     button {
         margin: 1em;
     }
+}
+
+input[type="radio"] {
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
+.fixed-p {
+    white-space: nowrap;
+    overflow: hidden;
 }
