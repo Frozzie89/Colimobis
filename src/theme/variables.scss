@@ -11,11 +11,15 @@ ion-content {
     --background: #00008b;
 }
 
-
 .coli-btn {
     padding: 1em;
-    padding-left: 2em;
+    width: 20em;
     text-align: right;
     font-weight: bold;
     color: darkblue;
+}
+
+.coli-btn-w-icon {
+    display: flex;
+    justify-content: space-between;
 }

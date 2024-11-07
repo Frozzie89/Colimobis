@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { RegimeTableComponent } from "../../modules/regime-table/regime-table.component";
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { Regime } from 'src/app/classes/regime';
@@ -10,7 +10,7 @@ import { Router, RouterModule } from '@angular/router';
     selector: 'app-regime-manage',
     templateUrl: './regime-manage.component.html',
     styleUrls: ['./regime-manage.component.scss'],
-    imports: [IonContent, RegimeTableComponent, HeaderComponent, RouterModule],
+    imports: [IonContent, RegimeTableComponent, HeaderComponent, RouterModule, IonIcon],
     standalone: true
 })
 export class RegimeManageComponent implements OnInit {

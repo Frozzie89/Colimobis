@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/angular/standalone';
 import { HeaderComponent } from "../../modules/header/header.component";
 import { Router, RouterModule } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { Router, RouterModule } from '@angular/router';
     selector: 'app-admin-hub',
     templateUrl: './admin-hub.component.html',
     styleUrls: ['./admin-hub.component.scss'],
-    imports: [IonContent, IonGrid, IonRow, IonCol, HeaderComponent, RouterModule],
+    imports: [IonContent, IonGrid, IonRow, IonCol, HeaderComponent, RouterModule, IonIcon],
     standalone: true
 })
 export class AdminHubComponent implements OnInit {

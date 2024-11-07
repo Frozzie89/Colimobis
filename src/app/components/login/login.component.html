@@ -53,7 +53,10 @@
         </ion-grid>
 
         <div class="form-group-btn">
-            <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+            <button class="coli-btn coli-btn-w-icon" type="submit" [disabled]="loginForm.invalid">
+                <ion-icon name="person"></ion-icon>
+                <span>Se connecter</span>
+            </button>
         </div>
 
     </form>

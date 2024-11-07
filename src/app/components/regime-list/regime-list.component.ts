@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Regime } from 'src/app/classes/regime';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
-import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from "../modules/header/header.component";
 import { RegimeTableComponent } from "../modules/regime-table/regime-table.component";
@@ -13,7 +13,7 @@ import { RegimeTableComponent } from "../modules/regime-table/regime-table.compo
     selector: 'app-regime-list',
     templateUrl: './regime-list.component.html',
     styleUrls: ['./regime-list.component.scss'],
-    imports: [NgFor, FormsModule, IonContent, IonGrid, IonRow, IonCol, HeaderComponent, RegimeTableComponent]
+    imports: [NgFor, FormsModule, IonContent, IonGrid, IonRow, IonCol, IonIcon, HeaderComponent, RegimeTableComponent]
 })
 export class RegimeListComponent implements OnInit {
 
