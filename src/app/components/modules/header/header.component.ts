@@ -12,7 +12,7 @@ import { IonHeader, IonToolbar, IonTitle } from '@ionic/angular/standalone';
 })
 export class HeaderComponent implements OnInit {
 
-    @Input() title = ''
+    @Input({ required: true }) title = ''
     @Input() hideRightPart = false
 
     constructor(private router: Router) { }
