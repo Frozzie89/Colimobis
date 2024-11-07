@@ -1,0 +1,18 @@
+.button-list {
+    display: flex;
+    justify-content: center;
+
+    button {
+        margin: 5px;
+    }
+}
+
+.warning {
+    background-color: orange;
+
+    p {
+        color: white;
+        font-style: italic;
+        padding: 2px;
+    }
+}
