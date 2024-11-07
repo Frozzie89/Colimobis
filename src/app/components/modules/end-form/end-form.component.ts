@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone'
 
 @Component({
@@ -11,8 +11,22 @@ import { IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone'
 })
 export class EndFormComponent implements OnInit {
 
-    constructor() { }
+    stopwatch = 6
 
-    ngOnInit() { }
+    constructor(
+        private router: Router
+    ) { }
+
+    async ngOnInit() {
+        let intervalId = setInterval(() => {
+            if (this.stopwatch <= 0) {
+                this.router.navigate(['login'])
+                this.stopwatch = 6
+                clearInterval(intervalId)
+            }
+
+            this.stopwatch -= 1
+        }, 1000);
+    }
 
 }
