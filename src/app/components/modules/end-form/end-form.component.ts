@@ -21,7 +21,7 @@ export class EndFormComponent implements OnInit {
     ngOnInit() {
         this.intervalId = setInterval(() => {
             if (this.stopwatch <= 0) {
-                this.router.navigate(['login'])
+                this.router.navigate(['/login'])
                 this.stopwatch = 6
                 clearInterval(this.intervalId)
             }
