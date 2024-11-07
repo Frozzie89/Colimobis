@@ -17,7 +17,7 @@ export class EndFormComponent implements OnInit {
         private router: Router
     ) { }
 
-    async ngOnInit() {
+    ngOnInit() {
         let intervalId = setInterval(() => {
             if (this.stopwatch <= 0) {
                 this.router.navigate(['login'])
