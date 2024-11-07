@@ -5,17 +5,19 @@ import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 import { environment } from 'src/environments/environment';
+import { HeaderComponent } from "../modules/header/header.component";
 
 
 @Component({
     standalone: true,
     selector: 'app-login',
     templateUrl: './login.component.html',
-    imports: [FormsModule, NgIf, IonContent, IonGrid, IonRow, IonCol],
+    imports: [FormsModule, NgIf, IonContent, IonGrid, IonRow, IonCol, HeaderComponent],
     styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
 
+    title = "S'authentifier"
     user!: User;
 
     constructor(private route: Router) { }

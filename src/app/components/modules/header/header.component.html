@@ -3,7 +3,7 @@
         <ion-title>
             <div class="title">
                 <small>{{title}}</small>
-                <div class="right-side">
+                <div class="right-side" *ngIf="!hideRightPart">
                     <small>UTILISATEUR1 TRAVAUX</small>
                     <small>-</small>
                     <small (click)="logout()">Déconnexion</small>
