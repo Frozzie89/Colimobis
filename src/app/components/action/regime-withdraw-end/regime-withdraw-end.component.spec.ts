@@ -3,20 +3,20 @@ import { IonicModule } from '@ionic/angular';
 
 import { RegimeWithdrawEndComponent } from './regime-withdraw-end.component';
 import { provideHttpClient } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs/internal/observable/of';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
-import { Regime, RegimeState } from 'src/app/classes/regime';
+import { Regime } from 'src/app/classes/regime';
 
 describe('RegimeWithdrawEndComponent', () => {
     let component: RegimeWithdrawEndComponent;
     let fixture: ComponentFixture<RegimeWithdrawEndComponent>;
     let regimeService: RegimeDataService;
-
-    const mockRegimeJson = { _id: '0', requestNumber: '1234', ot: 1, rf: '1', label: 'test', state: RegimeState.DEMARRE }
-
+    let routerSpy: jasmine.SpyObj<Router>;
 
     beforeEach(waitForAsync(() => {
+        routerSpy = jasmine.createSpyObj('Router', ['navigate']);
+
         TestBed.configureTestingModule({
             imports: [IonicModule.forRoot(), RegimeWithdrawEndComponent],
             providers: [{
@@ -25,8 +25,10 @@ describe('RegimeWithdrawEndComponent', () => {
                     snapshot: {
                         params: of({ id: '0' })
                     }
-                }
-            }, provideHttpClient()]
+                },
+            },
+            { provide: Router, useValue: routerSpy },
+            provideHttpClient()]
         }).compileComponents();
 
         spyOn(Regime, 'fromJson').and.callFake((json) => json ? json : new Regime());
