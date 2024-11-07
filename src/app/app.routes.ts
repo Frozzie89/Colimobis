@@ -7,6 +7,7 @@ import { RegimeRestoreComponent } from './components/action/regime-restore/regim
 import { AdminHubComponent } from './components/admin/admin-hub/admin-hub.component';
 import { RegimeManageComponent } from './components/admin/regime-manage/regime-manage.component';
 import { RegimeFormComponent } from './components/admin/regime-form/regime-form.component';
+import { RegimeWithdrawPrintComponent } from './components/action/regime-withdraw-print/regime-withdraw-print.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,6 +15,7 @@ export const routes: Routes = [
     { path: 'regime-search', component: RegimeSearchComponent },
     { path: 'regime-list/:search', component: RegimeListComponent },
     { path: 'action/regime-withdraw/:id', component: RegimeWithdrawComponent },
+    { path: 'action/regime-withdraw/:id/print', component: RegimeWithdrawPrintComponent },
     { path: 'action/regime-restore/:id', component: RegimeRestoreComponent },
     { path: 'admin', component: AdminHubComponent },
     { path: 'admin/regime-manage', component: RegimeManageComponent },
