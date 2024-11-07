@@ -1,27 +1,27 @@
 .form-container {
-    display: flex;
+    display: block;
     justify-content: center;
     padding: 20px;
-
-    * {
-        width: 80%;
-    }
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .form-container h2 {
     margin-top: 0;
     font-size: 1.5em;
     color: white;
+    text-align: center;
 }
 
 .form-group {
     margin-bottom: 15px;
+    width: 100%;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: white
+    color: white;
 }
 
 .form-group input[type="text"],

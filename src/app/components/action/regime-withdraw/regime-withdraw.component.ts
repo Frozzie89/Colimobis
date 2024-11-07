@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { RegimeStatusComponent } from "../../modules/regime-status/regime-status.component";
 import { Regime } from 'src/app/classes/regime';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -11,7 +11,7 @@ import { HeaderComponent } from "../../modules/header/header.component";
     selector: 'app-regime-withdraw',
     templateUrl: './regime-withdraw.component.html',
     styleUrls: ['./regime-withdraw.component.scss'],
-    imports: [IonContent, RegimeStatusComponent, RegimeDescriptionComponent, HeaderComponent],
+    imports: [IonContent, IonIcon, RegimeStatusComponent, RegimeDescriptionComponent, HeaderComponent],
     standalone: true
 })
 export class RegimeWithdrawComponent implements OnInit {

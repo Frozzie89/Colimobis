@@ -3,7 +3,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { User } from '../../classes/user';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
-import { IonContent, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/angular/standalone';
 import { environment } from 'src/environments/environment';
 import { HeaderComponent } from "../modules/header/header.component";
 
@@ -12,7 +12,7 @@ import { HeaderComponent } from "../modules/header/header.component";
     standalone: true,
     selector: 'app-login',
     templateUrl: './login.component.html',
-    imports: [FormsModule, NgIf, IonContent, IonGrid, IonRow, IonCol, HeaderComponent],
+    imports: [FormsModule, NgIf, IonContent, IonGrid, IonRow, IonCol, IonIcon, HeaderComponent],
     styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {

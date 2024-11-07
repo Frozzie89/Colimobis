@@ -16,13 +16,19 @@
                     <input type="text" #regimeId name="regimeId" id="regimeId">
                 </ion-col>
                 <ion-col size="4">
-                    <button class="coli-btn" (click)="queryRegimes(regimeId.value)">Valider</button>
+                    <button class="coli-btn coli-btn-w-icon" (click)="queryRegimes(regimeId.value)">
+                        <ion-icon name="checkbox"></ion-icon>
+                        <span>Valider</span>
+                    </button>
                 </ion-col>
             </ion-row>
 
             <ion-row>
                 <ion-col>
-                    <button class="coli-btn" (click)="queryRegimes('')">Accéder à votre liste d'attestations</button>
+                    <button class="coli-btn coli-btn-w-icon" (click)="queryRegimes('')">
+                        <ion-icon name="search"></ion-icon>
+                        <span>Accéder à votre liste d'attestations</span>
+                    </button>
                 </ion-col>
             </ion-row>
 

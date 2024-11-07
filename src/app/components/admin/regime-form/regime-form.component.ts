@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent } from '@ionic/angular/standalone';
+import { IonContent, IonIcon } from '@ionic/angular/standalone';
 import { HeaderComponent } from "../../modules/header/header.component";
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Regime } from 'src/app/classes/regime';
@@ -11,7 +11,7 @@ import { NgIf } from '@angular/common';
     selector: 'app-regime-form',
     templateUrl: './regime-form.component.html',
     styleUrls: ['./regime-form.component.scss'],
-    imports: [NgIf, IonContent, HeaderComponent, FormsModule, RouterModule],
+    imports: [NgIf, IonContent, HeaderComponent, FormsModule, RouterModule, IonIcon],
     standalone: true
 })
 export class RegimeFormComponent implements OnInit {

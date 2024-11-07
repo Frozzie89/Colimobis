@@ -52,8 +52,14 @@
     </form>
 
     <div class="button-zone">
-        <button class="coli-btn" (click)="back()">Retour</button>
-        <button class="coli-btn">Quitter le chantier</button>
+        <button class="coli-btn coli-btn-w-icon" (click)="back()">
+            <ion-icon name="arrow-back-circle"></ion-icon>
+            <span>Retour</span>
+        </button>
+        <button class="coli-btn coli-btn-w-icon">
+            <ion-icon name="power"></ion-icon>
+            <span>Quitter le chantier</span>
+        </button>
     </div>
 
 </ion-content>
