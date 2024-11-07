@@ -3,20 +3,25 @@
 <ion-content class="ion-padding">
     <div class="container">
         <form class="regime-form">
-            <div>
-                <input type="radio" name="regime-action" id="remove-action" [value]="0" [(ngModel)]="regimeAction">
-                <label for="remove-action">Retirer une attestation</label>
-            </div>
-
-            <div>
-                <input type="radio" name="regime-action" id="withdraw-action" [value]="1" [(ngModel)]="regimeAction">
-                <label for="withdraw-action">Rendre une attestation</label>
-            </div>
-
-            <div>
-                <input type="radio" name="regime-action" id="print-action" [value]="2" [(ngModel)]="regimeAction">
-                <label for="print-action">Imprimer un duplicata d'attestation</label>
-            </div>
+            <ion-grid>
+                <ion-row>
+                    <ion-col size="12" size-sm="4">
+                        <input type="radio" name="regime-action" id="remove-action" [value]="0"
+                            [(ngModel)]="regimeAction">
+                        <label for="remove-action">Retirer une attestation</label>
+                    </ion-col>
+                    <ion-col size="12" size-sm="4">
+                        <input type="radio" name="regime-action" id="withdraw-action" [value]="1"
+                            [(ngModel)]="regimeAction">
+                        <label for="withdraw-action">Rendre une attestation</label>
+                    </ion-col>
+                    <ion-col size="12" size-sm="4">
+                        <input type="radio" name="regime-action" id="print-action" [value]="2"
+                            [(ngModel)]="regimeAction">
+                        <label for="print-action">Imprimer un duplicata d'attestation</label>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
         </form>
 
         <module-regime-table [regimeList]="regimeList" [isEditable]="false"
