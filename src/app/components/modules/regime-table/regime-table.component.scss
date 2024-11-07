@@ -1,3 +1,7 @@
+.table-container {
+    overflow-x: auto;
+}
+
 table {
     width: 100%;
 }
@@ -7,7 +11,6 @@ th,
 td {
     border: 1px white solid;
     border-collapse: collapse;
-    overflow-x: auto;
 }
 
 th,
@@ -31,11 +34,11 @@ tr:nth-child(even) {
 .demande-col,
 .OT-col,
 .RF-col {
-    width: 10em;
+    width: 15%;
 }
 
 .label-col {
-    width: 20em;
+    width: 25%;
 }
 
 .action-col-content {
@@ -45,4 +48,34 @@ tr:nth-child(even) {
 .icon {
     padding-left: 10px;
     padding-right: 10px;
+}
+
+.orientation-message {
+    text-align: center;
+    color: gray;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+
+/* Hide non-essential columns on small screens */
+@media (max-width: 600px) {
+
+    .label-col,
+    .RF-col,
+    .OT-col {
+        display: none;
+    }
+
+    .regime-col,
+    .demande-col {
+        width: 50%;
+    }
+}
+
+/* Hides messages on large screens */
+@media (min-width: 601px) {
+    .orientation-message {
+        display: none;
+    }
 }
