@@ -3,10 +3,10 @@
     <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
         <ion-grid>
             <ion-row>
-                <ion-col>
+                <ion-col size="12" size-sm="5">
                     <label for="badgeNumberUser">N° de badge</label>
                 </ion-col>
-                <ion-col>
+                <ion-col size="12" size-sm="7">
                     <input type="text" [(ngModel)]="user.badgeNumber" required pattern="^[0-9]*$" name="badgeNumberUser"
                         id="badgeNumberUser" #badgeNumberUser="ngModel" (dblclick)="debugFillAdminform()">
                     <div *ngIf="badgeNumberUser.invalid && badgeNumberUser.touched">
@@ -20,10 +20,10 @@
             </ion-row>
 
             <ion-row>
-                <ion-col>
+                <ion-col size="12" size-sm="5">
                     <label for="NniUser">NNI</label>
                 </ion-col>
-                <ion-col>
+                <ion-col size="12" size-sm="7">
                     <input type="text" [(ngModel)]="user.nni" required pattern="^[a-zA-Z0-9]{8}$" name="NniUser"
                         id="NniUser" #nniUser="ngModel">
                     <div *ngIf="nniUser.invalid && nniUser.touched">
@@ -36,10 +36,10 @@
             </ion-row>
 
             <ion-row>
-                <ion-col>
+                <ion-col size="12" size-sm="5">
                     <label for="passwordUser">Mot de passe Sésame</label>
                 </ion-col>
-                <ion-col>
+                <ion-col size="12" size-sm="7">
                     <input type="password" [(ngModel)]="user.password" name="passwordUser" id="passwordUser" required
                         #passwordUser="ngModel">
                     <div *ngIf="passwordUser.invalid && passwordUser.touched">
