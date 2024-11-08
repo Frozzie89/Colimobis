@@ -1,21 +1,42 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
-import { IonicModule } from '@ionic/angular';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute, Router } from '@angular/router';
+import { RegimeDataService } from 'src/app/service/regime-data.service';
+import { of } from 'rxjs';
+import { RegimeRestoreComponent } from '../regime-restore/regime-restore.component';
 
-import { RegimeRestoreEndComponent } from './regime-restore-end.component';
+describe('RegimeRestoreComponent', () => {
+    let component: RegimeRestoreComponent;
+    let fixture: ComponentFixture<RegimeRestoreComponent>;
+    let mockActivatedRoute;
+    let mockRouter: { navigate: any; };
+    let mockRegimeService;
 
-describe('RegimeRestoreEndComponent', () => {
-    let component: RegimeRestoreEndComponent;
-    let fixture: ComponentFixture<RegimeRestoreEndComponent>;
+    beforeEach(() => {
+        mockActivatedRoute = {
+            snapshot: {
+                params: { id: 'test-id' }
+            }
+        };
 
-    beforeEach(waitForAsync(() => {
+        mockRouter = jasmine.createSpyObj(['navigate']);
+
+        mockRegimeService = jasmine.createSpyObj('RegimeDataService', ['regimeList$']);
+        mockRegimeService.regimeList$ = of([
+            { _id: 'test-id' }
+        ]);
+
         TestBed.configureTestingModule({
-            imports: [IonicModule.forRoot(), RegimeRestoreEndComponent]
+            imports: [RegimeRestoreComponent],
+            providers: [
+                { provide: ActivatedRoute, useValue: mockActivatedRoute },
+                { provide: Router, useValue: mockRouter },
+                { provide: RegimeDataService, useValue: mockRegimeService }
+            ]
         }).compileComponents();
 
-        fixture = TestBed.createComponent(RegimeRestoreEndComponent);
+        fixture = TestBed.createComponent(RegimeRestoreComponent);
         component = fixture.componentInstance;
-        fixture.detectChanges();
-    }));
+    });
 
     it('should create', () => {
         expect(component).toBeTruthy();
