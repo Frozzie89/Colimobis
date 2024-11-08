@@ -29,7 +29,8 @@ export class AuditDataService {
                         stateBefore: doc.stateBefore,
                         stateCurrent: doc.stateCurrent,
                     } as Audit;
-                });
+                })
+                .sort((a, b) => b.date.getTime() - a.date.getTime())
             this.auditListSubject.next(auditList); // Update the BehaviorSubject with the fetched list
         } catch (error) {
             console.error('Error fetching audits:', error);
