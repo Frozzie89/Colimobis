@@ -1,6 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { IonContent, IonIcon, IonList, IonItem, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/angular/standalone'
 import { InfiniteScrollCustomEvent } from '@ionic/core';
 import { Audit } from 'src/app/classes/audit';
@@ -19,7 +19,8 @@ export class AuditListComponent implements OnInit {
     private noMoreData = false;  // Flag when there's no more data to load
 
     constructor(
-        private auditDataService: AuditDataService
+        private auditDataService: AuditDataService,
+        private router: Router
     ) { }
 
     ngOnInit() {
@@ -48,5 +49,10 @@ export class AuditListComponent implements OnInit {
                 (event as InfiniteScrollCustomEvent).target.disabled = true; // Disable further scroll if no more data
             }
         }, 500);
+    }
+
+    back() {
+        this.auditDataService.resetPagination()
+        this.router.navigate(['admin'])
     }
 }
