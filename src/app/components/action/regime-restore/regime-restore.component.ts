@@ -5,17 +5,20 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { Regime } from 'src/app/classes/regime';
 import { HeaderComponent } from "../../modules/header/header.component";
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-regime-restore',
     templateUrl: './regime-restore.component.html',
     styleUrls: ['./regime-restore.component.scss'],
-    imports: [IonContent, RegimeStatusComponent, IonGrid, IonCol, IonRow, IonIcon, IonTextarea, RouterModule, HeaderComponent],
+    imports: [IonContent, RegimeStatusComponent, IonGrid, IonCol, IonRow, IonIcon, IonTextarea, RouterModule, FormsModule, HeaderComponent],
     standalone: true
 })
 export class RegimeRestoreComponent implements OnInit {
 
     regime!: Regime
+    equipment!: boolean
+    activity!: boolean
     title = 'Quitter un chantier'
 
     constructor(

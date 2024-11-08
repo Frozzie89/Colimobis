@@ -3,7 +3,7 @@
 <ion-content class="ion-padding">
     <div class="scrollable">
         <module-regime-status [regime]="regime"></module-regime-status>
-        <form>
+        <form #restoreForm="ngForm">
             <ion-grid>
                 <ion-row>
                     <ion-col>
@@ -15,11 +15,13 @@
                         <p class="fixed-p">Ce matériel est disponible</p>
                     </ion-col>
                     <ion-col>
-                        <input type="radio" name="equipment-status" id="equipment-status-yes">
+                        <input type="radio" name="equipment-status" id="equipment-status-yes" [(ngModel)]="equipment"
+                            [value]="true" required>
                         <label for="equipment-status-yes">Oui</label>
                     </ion-col>
                     <ion-col>
-                        <input type="radio" name="equipment-status" id="equipment-status-no">
+                        <input type="radio" name="equipment-status" id="equipment-status-no" [(ngModel)]="equipment"
+                            [value]="false" required>
                         <label for="equipment-status-no">Non</label>
                     </ion-col>
                 </ion-row>
@@ -28,11 +30,13 @@
                         <p class="fixed-p">Statut de l'activité</p>
                     </ion-col>
                     <ion-col>
-                        <input type="radio" name="activity-status" id="activity-status-no">
+                        <input type="radio" name="activity-status" id="activity-status-no" [(ngModel)]="activity"
+                            [value]="false" required>
                         <label for="activity-status-no">Non terminée</label>
                     </ion-col>
                     <ion-col>
-                        <input type="radio" name="activity-status" id="activity-status-yes">
+                        <input type="radio" name="activity-status" id="activity-status-yes" [(ngModel)]="activity"
+                            [value]="true" required>
                         <label for="activity-status-yes">Terminé</label>
                     </ion-col>
                 </ion-row>
@@ -47,7 +51,8 @@
                 <ion-icon name="arrow-back-circle"></ion-icon>
                 <span>Retour</span>
             </button>
-            <button class="coli-btn coli-btn-w-icon" [routerLink]="'end'">
+            <button class="coli-btn coli-btn-w-icon" [routerLink]="['/end']"
+                [queryParams]="{equipment: equipment, activity : activity}" [disabled]="restoreForm.invalid">
                 <ion-icon name="power"></ion-icon>
                 <span>Quitter le chantier</span>
             </button>
