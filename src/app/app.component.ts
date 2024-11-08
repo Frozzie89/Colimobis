@@ -3,6 +3,8 @@ import { StatusBar } from '@capacitor/status-bar';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { RegimeDataService } from './service/regime-data.service';
 import { Platform } from '@ionic/angular';
+import { AuditDataService } from './service/audit-data.service';
+
 @Component({
     selector: 'app-root',
     templateUrl: 'app.component.html',
@@ -12,7 +14,8 @@ import { Platform } from '@ionic/angular';
 export class AppComponent {
     constructor(
         private platform: Platform,
-        private regimeService: RegimeDataService
+        private regimeService: RegimeDataService,
+        private auditService: AuditDataService
     ) {
         this.initApp()
     }
@@ -25,5 +28,7 @@ export class AppComponent {
         }
 
         this.regimeService.getAllRegimes()
+        this.auditService.cleanOldAudits()
+
     }
 }
