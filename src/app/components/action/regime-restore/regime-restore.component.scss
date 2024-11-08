@@ -44,3 +44,15 @@ input[type="radio"] {
     white-space: nowrap;
     overflow: hidden;
 }
+
+.scrollable {
+    min-height: calc(100vh + 200px);
+}
+
+@media (min-width: 600px) {
+
+    .scrollable {
+        min-height: calc(100vh + 500px);
+    }
+
+}
