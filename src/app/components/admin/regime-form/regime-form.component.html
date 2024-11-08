@@ -5,25 +5,28 @@
         <form #regimeForm="ngForm" (ngSubmit)="onSubmit(regimeForm)">
             <h2>Création d'un nouveau régime</h2>
             <div class="form-group">
-                <label for="id">Régime / A2X</label>
-                <input type="text" id="id" name="id" [(ngModel)]="regime._id" required
-                    [disabled]="action === 'edit' ? true : false">
+                <label [focusInput]="idInput">Régime / A2X</label>
+                <ion-input class="default-input-style" id="id" name="id" [(ngModel)]="regime._id" #idInput required
+                    [disabled]="action === 'edit' ? true : false"></ion-input>
             </div>
             <div class="form-group">
-                <label for="requestNumber">Demande</label>
-                <input type="text" id="requestNumber" name="requestNumber" [(ngModel)]="regime.requestNumber">
+                <label [focusInput]="requestNumberInput">Demande</label>
+                <ion-input class="default-input-style" id="requestNumber" name="requestNumber"
+                    [(ngModel)]="regime.requestNumber" #requestNumberInput></ion-input>
             </div>
             <div class="form-group">
-                <label for="ot">OT</label>
-                <input type="number" id="ot" name="ot" [(ngModel)]="regime.ot">
+                <label [focusInput]="otInput">OT</label>
+                <ion-input type="number" inputmode="numeric" pattern="\d*" class="default-input-style" id="ot" name="ot"
+                    [(ngModel)]="regime.ot" #otInput></ion-input>
             </div>
             <div class="form-group">
-                <label for="rf">RF</label>
-                <input type="text" id="rf" name="rf" [(ngModel)]="regime.rf">
+                <label [focusInput]="rfInput">RF</label>
+                <ion-input class="default-input-style" id="rf" name="rf" [(ngModel)]="regime.rf" #rfInput></ion-input>
             </div>
             <div class="form-group">
-                <label for="label">Libéllé d'attestation</label>
-                <input type="text" id="label" name="label" [(ngModel)]="regime.label" required>
+                <label [focusInput]="labelInput">Libéllé d'attestation</label>
+                <ion-input class="default-input-style" id="label" name="label" [(ngModel)]="regime.label" #labelInput
+                    required></ion-input>
             </div>
             <div class="form-group">
                 <button class="coli-btn coli-btn-w-icon">

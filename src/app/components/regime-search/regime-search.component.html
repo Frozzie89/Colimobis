@@ -13,10 +13,11 @@
 
             <ion-row>
                 <ion-col>
-                    <input type="text" #regimeId name="regimeId" id="regimeId">
+                    <ion-input [(ngModel)]="regimeId" class="default-input-style" name="regimeId"
+                        id="regimeId"></ion-input>
                 </ion-col>
                 <ion-col size="4">
-                    <button class="coli-btn coli-btn-w-icon" (click)="queryRegimes(regimeId.value)">
+                    <button class="coli-btn coli-btn-w-icon" (click)="queryRegimes(regimeId)">
                         <ion-icon name="checkbox"></ion-icon>
                         <span>Valider</span>
                     </button>

@@ -23,3 +23,43 @@ ion-content {
     display: flex;
     justify-content: space-between;
 }
+
+.default-input-style {
+    --background: white;
+    --color: black;
+    --padding-start: 7px;
+    --padding-end: 7px;
+    --box-shadow: none;
+    --border-radius: 2px;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #ccc;
+    height: auto;
+    min-height: 35px;
+    font-size: 16px;
+}
+
+.default-input-style:focus {
+    --border-color: #007aff;
+    outline: none;
+}
+
+.default-textarea-style {
+    --background: white;
+    --color: black;
+    --padding-start: 7px;
+    --padding-end: 7px;
+    --border-radius: 2px;
+    --box-shadow: none;
+    --border-width: 1px;
+    --border-style: solid;
+    --border-color: #ccc;
+    font-size: 16px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.default-textarea-style:focus {
+    --border-color: #007aff;
+    outline: none;
+}

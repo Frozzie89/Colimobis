@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent, IonGrid, IonCol, IonIcon, IonRow } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonCol, IonIcon, IonRow, IonTextarea } from '@ionic/angular/standalone';
 import { RegimeStatusComponent } from "../../modules/regime-status/regime-status.component";
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
@@ -10,7 +10,7 @@ import { HeaderComponent } from "../../modules/header/header.component";
     selector: 'app-regime-restore',
     templateUrl: './regime-restore.component.html',
     styleUrls: ['./regime-restore.component.scss'],
-    imports: [IonContent, RegimeStatusComponent, IonGrid, IonCol, IonRow, IonIcon, RouterModule, HeaderComponent],
+    imports: [IonContent, RegimeStatusComponent, IonGrid, IonCol, IonRow, IonIcon, IonTextarea, RouterModule, HeaderComponent],
     standalone: true
 })
 export class RegimeRestoreComponent implements OnInit {

@@ -1,65 +1,57 @@
 <module-header [title]="title"></module-header>
 
 <ion-content class="ion-padding">
-    <module-regime-status [regime]="regime"></module-regime-status>
-
-    <form>
-        <ion-grid>
-            <ion-row>
-                <ion-col>
-                    <p>En quittant votre chantier, vous rendez le matériel à l'exploitant.</p>
-                </ion-col>
-            </ion-row>
-
-            <ion-row>
-                <ion-col size="11" size-sm="5">
-                    <p class="fixed-p">Ce matériel est disponible</p>
-                </ion-col>
-
-                <ion-col>
-                    <input type="radio" name="equipment-status" id="equipment-status-yes">
-                    <label for="equipment-status-yes">Oui</label>
-                </ion-col>
-
-                <ion-col>
-                    <input type="radio" name="equipment-status" id="equipment-status-no">
-                    <label for="equipment-status-no">Non</label>
-                </ion-col>
-            </ion-row>
-
-            <ion-row>
-                <ion-col size="10" size-sm="5">
-                    <p class="fixed-p">Statut de l'activité</p>
-                </ion-col>
-
-                <ion-col>
-                    <input type="radio" name="activity-status" id="activity-status-no">
-                    <label for="activity-status-no">Non terminée</label>
-                </ion-col>
-
-                <ion-col>
-                    <input type="radio" name="activity-status" id="activity-status-yes">
-                    <label for="activity-status-yes">Terminé</label>
-                </ion-col>
-            </ion-row>
-
-            <ion-row class="comment-zone">
-                <p>Commentaire</p>
-                <textarea name="form-comment" id="form-comment"></textarea>
-            </ion-row>
-
-        </ion-grid>
-    </form>
-
-    <div class="button-zone">
-        <button class="coli-btn coli-btn-w-icon" (click)="back()">
-            <ion-icon name="arrow-back-circle"></ion-icon>
-            <span>Retour</span>
-        </button>
-        <button class="coli-btn coli-btn-w-icon">
-            <ion-icon name="power"></ion-icon>
-            <span>Quitter le chantier</span>
-        </button>
+    <div class="scrollable">
+        <module-regime-status [regime]="regime"></module-regime-status>
+        <form>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <p>En quittant votre chantier, vous rendez le matériel à l'exploitant.</p>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="11" size-sm="5">
+                        <p class="fixed-p">Ce matériel est disponible</p>
+                    </ion-col>
+                    <ion-col>
+                        <input type="radio" name="equipment-status" id="equipment-status-yes">
+                        <label for="equipment-status-yes">Oui</label>
+                    </ion-col>
+                    <ion-col>
+                        <input type="radio" name="equipment-status" id="equipment-status-no">
+                        <label for="equipment-status-no">Non</label>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col size="10" size-sm="5">
+                        <p class="fixed-p">Statut de l'activité</p>
+                    </ion-col>
+                    <ion-col>
+                        <input type="radio" name="activity-status" id="activity-status-no">
+                        <label for="activity-status-no">Non terminée</label>
+                    </ion-col>
+                    <ion-col>
+                        <input type="radio" name="activity-status" id="activity-status-yes">
+                        <label for="activity-status-yes">Terminé</label>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="comment-zone">
+                    <p>Commentaire</p>
+                    <ion-textarea class="default-textarea-style" name="form-comment" id="form-comment"></ion-textarea>
+                </ion-row>
+            </ion-grid>
+        </form>
+        <div class="button-zone">
+            <button class="coli-btn coli-btn-w-icon" (click)="back()">
+                <ion-icon name="arrow-back-circle"></ion-icon>
+                <span>Retour</span>
+            </button>
+            <button class="coli-btn coli-btn-w-icon">
+                <ion-icon name="power"></ion-icon>
+                <span>Quitter le chantier</span>
+            </button>
+        </div>
     </div>
 
 </ion-content>
