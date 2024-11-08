@@ -12,7 +12,7 @@ import { FocusInputDirective } from 'src/app/directives/focus-input.directive';
     selector: 'app-regime-form',
     templateUrl: './regime-form.component.html',
     styleUrls: ['./regime-form.component.scss'],
-    imports: [NgIf, IonContent, IonIcon, IonInput, FormsModule, RouterModule, HeaderComponent, FocusInputDirective],
+    imports: [IonContent, IonIcon, IonInput, FormsModule, RouterModule, HeaderComponent, FocusInputDirective],
     standalone: true
 })
 export class RegimeFormComponent implements OnInit {

@@ -1,7 +1,7 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { IonContent, IonIcon, IonList, IonItem, IonLabel, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/angular/standalone'
+import { IonContent, IonIcon, IonList, IonItem, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/angular/standalone'
 import { InfiniteScrollCustomEvent } from '@ionic/core';
 import { Audit } from 'src/app/classes/audit';
 import { AuditDataService } from 'src/app/service/audit-data.service';
@@ -10,7 +10,7 @@ import { AuditDataService } from 'src/app/service/audit-data.service';
     selector: 'app-audit-list',
     templateUrl: './audit-list.component.html',
     styleUrls: ['./audit-list.component.scss'],
-    imports: [IonContent, IonIcon, IonList, IonLabel, IonItem, IonInfiniteScroll, IonInfiniteScrollContent, RouterModule, NgFor],
+    imports: [IonContent, IonIcon, IonList, IonItem, IonInfiniteScroll, IonInfiniteScrollContent, RouterModule, NgFor],
     standalone: true
 })
 export class AuditListComponent implements OnInit {
