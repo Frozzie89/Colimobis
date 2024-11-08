@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Regime, RegimeState } from '../classes/regime';
-import { DatabaseService } from './database.service';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import PouchDB from 'pouchdb'
 
 @Injectable({
     providedIn: 'root'
@@ -9,15 +9,19 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class RegimeDataService {
     private regimeListSubject = new BehaviorSubject<Regime[]>([]);
     public regimeList$ = this.regimeListSubject.asObservable();
-    documentID = 'regimes'
+    private database!: PouchDB.Database;
 
-    constructor(
-        private databaseService: DatabaseService
-    ) { }
+    constructor() {
+        this.initDB()
+    }
+
+    initDB() {
+        this.database = new PouchDB('regimes')
+    }
 
     async getAllRegimes() {
         try {
-            const result = await this.databaseService.database.allDocs({ include_docs: true });
+            const result = await this.database.allDocs({ include_docs: true });
             const regimeList = result.rows
                 .filter(row => row.doc)
                 .map(row => {
@@ -40,7 +44,7 @@ export class RegimeDataService {
 
     async save(regime: Regime) {
         try {
-            await this.databaseService.database.put(regime);
+            await this.database.put(regime);
             this.getAllRegimes()
         } catch (error) {
             console.error('Error saving regime:', error);
@@ -50,7 +54,7 @@ export class RegimeDataService {
 
     async update(updatedRegime: Regime): Promise<void> {
         try {
-            const existingDoc = await this.databaseService.database.get(updatedRegime._id);
+            const existingDoc = await this.database.get(updatedRegime._id);
 
             // Create an updated document by merging existing fields with updated fields
             const regimeToSave = {
@@ -63,7 +67,7 @@ export class RegimeDataService {
             };
 
             // Save the updated document
-            await this.databaseService.database.put(regimeToSave);
+            await this.database.put(regimeToSave);
 
             this.getAllRegimes();
         } catch (error) {
@@ -73,10 +77,10 @@ export class RegimeDataService {
 
     async deleteRegime(id: string): Promise<void> {
         try {
-            const existingDoc = await this.databaseService.database.get(id);
+            const existingDoc = await this.database.get(id);
 
             // Delete the document using `_id` and `_rev`
-            await this.databaseService.database.remove(existingDoc._id, existingDoc._rev);
+            await this.database.remove(existingDoc._id, existingDoc._rev);
 
             this.getAllRegimes();
         } catch (error) {
