@@ -3,16 +3,17 @@ import { FormsModule, NgForm } from '@angular/forms';
 import { User } from '../../classes/user';
 import { NgIf } from '@angular/common';
 import { Router } from '@angular/router';
-import { IonContent, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonGrid, IonRow, IonCol, IonIcon, IonInput } from '@ionic/angular/standalone';
 import { environment } from 'src/environments/environment';
 import { HeaderComponent } from "../modules/header/header.component";
+import { FocusInputDirective } from 'src/app/directives/focus-input.directive';
 
 
 @Component({
     standalone: true,
     selector: 'app-login',
     templateUrl: './login.component.html',
-    imports: [FormsModule, NgIf, IonContent, IonGrid, IonRow, IonCol, IonIcon, HeaderComponent],
+    imports: [FormsModule, NgIf, IonContent, IonGrid, IonRow, IonCol, IonIcon, IonInput, HeaderComponent, FocusInputDirective],
     styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {

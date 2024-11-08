@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { IonContent, IonIcon } from '@ionic/angular/standalone';
+import { IonContent, IonIcon, IonInput } from '@ionic/angular/standalone';
 import { HeaderComponent } from "../../modules/header/header.component";
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Regime } from 'src/app/classes/regime';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { NgIf } from '@angular/common';
+import { FocusInputDirective } from 'src/app/directives/focus-input.directive';
 
 @Component({
     selector: 'app-regime-form',
     templateUrl: './regime-form.component.html',
     styleUrls: ['./regime-form.component.scss'],
-    imports: [NgIf, IonContent, HeaderComponent, FormsModule, RouterModule, IonIcon],
+    imports: [NgIf, IonContent, IonIcon, IonInput, FormsModule, RouterModule, HeaderComponent, FocusInputDirective],
     standalone: true
 })
 export class RegimeFormComponent implements OnInit {
-
     title = 'Formulaire de régime'
     regime: Regime = new Regime()
     action = 'create'
@@ -58,4 +58,4 @@ export class RegimeFormComponent implements OnInit {
         this.router.navigate(['admin/regime-manage'])
     }
 
-}
+}        

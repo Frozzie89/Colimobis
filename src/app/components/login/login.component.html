@@ -7,11 +7,12 @@
         <ion-grid>
             <ion-row>
                 <ion-col size="12" size-sm="5">
-                    <label for="badgeNumberUser">N° de badge</label>
+                    <label [focusInput]="badgeNumberUserInput">N° de badge</label>
                 </ion-col>
                 <ion-col size="12" size-sm="7">
-                    <input type="text" [(ngModel)]="user.badgeNumber" required pattern="^[0-9]*$" name="badgeNumberUser"
-                        id="badgeNumberUser" #badgeNumberUser="ngModel" (dblclick)="debugFillAdminform()">
+                    <ion-input class="default-input-style" [(ngModel)]="user.badgeNumber" required pattern="^[0-9]*$"
+                        name="badgeNumberUser" id="badgeNumberUser" #badgeNumberUser="ngModel" #badgeNumberUserInput
+                        (dblclick)="debugFillAdminform()"></ion-input>
                     <div *ngIf="badgeNumberUser.invalid && badgeNumberUser.touched">
                         <div class="error-msg" *ngIf="badgeNumberUser.errors?.['required']">Ce champ est requis
                         </div>
@@ -24,11 +25,11 @@
 
             <ion-row>
                 <ion-col size="12" size-sm="5">
-                    <label for="NniUser">NNI</label>
+                    <label [focusInput]="nniUserInput">NNI</label>
                 </ion-col>
                 <ion-col size="12" size-sm="7">
-                    <input type="text" [(ngModel)]="user.nni" required pattern="^[a-zA-Z0-9]{8}$" name="NniUser"
-                        id="NniUser" #nniUser="ngModel">
+                    <ion-input class="default-input-style" [(ngModel)]="user.nni" required pattern="^[a-zA-Z0-9]{8}$"
+                        name="NniUser" id="NniUser" #nniUser="ngModel" #nniUserInput> </ion-input>
                     <div *ngIf="nniUser.invalid && nniUser.touched">
                         <div class="error-msg" *ngIf="nniUser.errors?.['required']">Ce champ est requis</div>
                         <div class="error-msg" *ngIf="nniUser.errors?.['pattern']">Doit être exactement 8 caractères
@@ -40,11 +41,12 @@
 
             <ion-row>
                 <ion-col size="12" size-sm="5">
-                    <label for="passwordUser">Mot de passe Sésame</label>
+                    <label [focusInput]="passwordUserInput">Mot de passe Sésame</label>
                 </ion-col>
                 <ion-col size="12" size-sm="7">
-                    <input type="password" [(ngModel)]="user.password" name="passwordUser" id="passwordUser" required
-                        #passwordUser="ngModel">
+                    <ion-input class="default-input-style" type="password" [(ngModel)]="user.password"
+                        name="passwordUser" id="passwordUser" required #passwordUser="ngModel"
+                        #passwordUserInput></ion-input>
                     <div *ngIf="passwordUser.invalid && passwordUser.touched">
                         <div class="error-msg" *ngIf="passwordUser.errors?.['required']">Ce champ est requis</div>
                     </div>
