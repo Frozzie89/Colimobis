@@ -1,4 +1,6 @@
+import { formatDate } from "@angular/common"
 import { RegimeState } from "./regime"
+import { environment } from "src/environments/environment"
 
 export class Audit {
     _id: string
@@ -22,7 +24,7 @@ export class Audit {
 
         return new Audit(
             data._id,
-            data.date,
+            new Date(data.date),
             data.regimeId,
             data.stateBefore as RegimeState,
             data.stateCurrent as RegimeState
@@ -31,6 +33,10 @@ export class Audit {
 
     toString(): string {
         return `[Id = ${this._id}, Date = ${this.date}, RegimeId = ${this.regimeId}, StateBefore = ${this.stateBefore}, StateCurrent = ${this.stateCurrent}]`
+    }
+
+    formattedDate(): string {
+        return formatDate(this.date, environment.dateFormat, 'fr-FR')
     }
 
 }
