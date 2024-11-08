@@ -73,6 +73,8 @@ To run the Ionic app as a native Android app using Capacitor:
 
     2.2. without Android Studio (on a connected device)
     ```sh
+    $ ionic cap sync
+    $ ionic cap build android
     $ ionic cap run android --external -livereload --consolelogs --serverlogs
     ```
 
