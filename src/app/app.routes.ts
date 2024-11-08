@@ -10,6 +10,7 @@ import { RegimeFormComponent } from './components/admin/regime-form/regime-form.
 import { RegimeWithdrawPrintComponent } from './components/action/regime-withdraw-print/regime-withdraw-print.component';
 import { RegimeWithdrawEndComponent } from './components/action/regime-withdraw-end/regime-withdraw-end.component';
 import { RegimeRestoreEndComponent } from './components/action/regime-restore-end/regime-restore-end.component';
+import { AuditListComponent } from './components/admin/audit-list/audit-list.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -25,5 +26,6 @@ export const routes: Routes = [
     { path: 'admin/regime-manage', component: RegimeManageComponent },
     { path: 'admin/regime-manage/regime-form', component: RegimeFormComponent },
     { path: 'admin/regime-manage/regime-form/:id/:action', component: RegimeFormComponent },
+    { path: 'admin/audit-list', component: AuditListComponent },
     { path: '**', component: LoginComponent }
 ];
