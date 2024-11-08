@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 
@@ -11,13 +11,16 @@ import { IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
 })
 export class EndFormComponent implements OnInit {
 
+    @Input() stopForDebug = false
     stopwatch = 6;
     intervalId: any;
 
     constructor(private router: Router) { }
 
     ngOnInit() {
-        this.startCountdown();
+        if (!this.stopForDebug) {
+            this.startCountdown();
+        }
     }
 
     startCountdown() {
