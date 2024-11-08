@@ -43,13 +43,10 @@ export class RegimeFormComponent implements OnInit {
             switch (this.action) {
                 case 'create':
                     this.regimeService.save(this.regime)
-                    // this.regimeService.regimeList.push(this.regime)
                     break;
 
                 case 'edit':
                     this.regimeService.update(this.regime)
-                    // const index = this.regimeService.regimeList.findIndex(item => item.id === this.regime.id)
-                    // this.regimeService.regimeList[index] = this.regime
                     break;
             }
 
