@@ -1,0 +1,50 @@
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        margin-right: 1em;
+        text-align: center;
+    }
+
+    .icon {
+        max-width: 60px;
+        flex-shrink: 0;
+    }
+}
+
+.align-right {
+    text-align: right;
+}
+
+p {
+    font-size: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+ion-col {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.orange {
+    color: orange;
+}
+
+@media (max-width: 600px) {
+    ion-col {
+        p {
+            text-align: center;
+        }
+    }
+}
