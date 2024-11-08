@@ -4,12 +4,6 @@
 
 export const environment = {
     production: false,
-    regimePaths: {
-        android: 'colimobis/regimes.json'
-    },
-    localStorage: {
-        regimes: 'regimes'
-    }
 };
 
 /*
