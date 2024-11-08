@@ -19,13 +19,11 @@ export class AppComponent {
 
     initApp() {
         if (this.platform.is('capacitor')) {
-
             StatusBar.setBackgroundColor({ color: '#00008b' })
             StatusBar.hide()
             StatusBar.setOverlaysWebView({ overlay: true })
         }
 
-        // this.regimeService.initializeService()
         this.regimeService.getAllRegimes()
     }
 }

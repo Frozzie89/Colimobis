@@ -18,3 +18,13 @@ ion-header {
 small {
     color: white;
 }
+
+/* Hide specific text elements on smaller screens */
+@media (max-width: 480px) {
+
+    /* Adjust this value based on when you want the text hidden */
+    .right-side small:first-child,
+    .right-side small:nth-child(2) {
+        display: none;
+    }
+}
