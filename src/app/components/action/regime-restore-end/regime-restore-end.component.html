@@ -12,7 +12,8 @@
                     <p class="align-right">Matériel</p>
                 </ion-col>
                 <ion-col size="10" size-sm="5">
-                    <p>NON DISPONIBLE</p>
+                    <p *ngIf="equipment" class="green">DISPONIBLE</p>
+                    <p *ngIf="!equipment" class="red">NON DISPONIBLE</p>
                 </ion-col>
             </ion-row>
             <ion-row>
@@ -20,7 +21,8 @@
                     <p class="align-right">Activité</p>
                 </ion-col>
                 <ion-col size="10" size-sm="5">
-                    <p>NON TERMINÉE</p>
+                    <p *ngIf="activity" class="green">TERMINÉE</p>
+                    <p *ngIf="!activity" class="orange">NON TERMINÉE</p>
                 </ion-col>
             </ion-row>
         </ion-grid>
