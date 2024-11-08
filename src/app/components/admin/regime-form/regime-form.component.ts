@@ -28,13 +28,12 @@ export class RegimeFormComponent implements OnInit {
 
     ngOnInit() {
         const id = this.route.snapshot.params['id']
+        this.action = this.route.snapshot.params['action'] || 'create'
 
         this.regimeService.regimeList$.subscribe(regimes => {
             const regimeJson = regimes.find(regime => regime._id?.includes(id)) || new Regime()
             this.regime = Regime.fromJson(regimeJson)
         })
-
-        this.action = this.route.snapshot.params['action'] || 'create'
     }
 
     onSubmit(regimeForm: NgForm) {
