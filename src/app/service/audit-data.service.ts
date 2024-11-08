@@ -32,7 +32,7 @@ export class AuditDataService {
                 });
             this.auditListSubject.next(auditList); // Update the BehaviorSubject with the fetched list
         } catch (error) {
-            console.error('Error fetching regimes:', error);
+            console.error('Error fetching audits:', error);
         }
     }
 
@@ -41,7 +41,7 @@ export class AuditDataService {
             await this.databaseService.database.put(audit);
             this.getAllAudits()
         } catch (error) {
-            console.error('Error saving regime:', error);
+            console.error('Error saving audit:', error);
         }
     }
 
