@@ -1,9 +1,4 @@
 export const environment = {
     production: true,
-    regimePaths: {
-        android: 'colimobis/regimes.json'
-    },
-    localStorage: {
-        regimes: 'regimes'
-    }
+    dateFormat: 'dd/MM/yyyy'
 };

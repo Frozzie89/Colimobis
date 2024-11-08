@@ -13,7 +13,7 @@ import { RegimeTableComponent } from "../modules/regime-table/regime-table.compo
     selector: 'app-regime-list',
     templateUrl: './regime-list.component.html',
     styleUrls: ['./regime-list.component.scss'],
-    imports: [NgFor, FormsModule, IonContent, IonGrid, IonRow, IonCol, IonIcon, HeaderComponent, RegimeTableComponent]
+    imports: [FormsModule, IonContent, IonGrid, IonRow, IonCol, IonIcon, HeaderComponent, RegimeTableComponent]
 })
 export class RegimeListComponent implements OnInit {
 

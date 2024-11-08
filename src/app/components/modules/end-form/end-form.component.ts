@@ -1,6 +1,7 @@
 import { Component, Input, input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonIcon, IonGrid, IonRow, IonCol } from '@ionic/angular/standalone';
+import { environment } from 'src/environments/environment';
 
 @Component({
     selector: 'module-end-form',
@@ -18,7 +19,7 @@ export class EndFormComponent implements OnInit {
     constructor(private router: Router) { }
 
     ngOnInit() {
-        if (!this.stopForDebug) {
+        if (environment.production || !this.stopForDebug) {
             this.startCountdown();
         }
     }
