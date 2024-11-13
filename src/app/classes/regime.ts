@@ -6,7 +6,7 @@ export class Regime {
     label: string
     state: RegimeState
 
-    constructor(id: string = '', requestNumber: string = '', ot: number = 0, rf: string = '', label: string = '', state: RegimeState = RegimeState.RETURNED_UNDONE) {
+    constructor(id: string = '', requestNumber: string = '', ot: number = 0, rf: string = '', label: string = '', state: RegimeState = RegimeState.AUTHORIZED) {
         this._id = id
         this.requestNumber = requestNumber
         this.ot = ot
