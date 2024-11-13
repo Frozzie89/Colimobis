@@ -6,17 +6,20 @@
             <h2>Création d'un nouveau régime</h2>
             <div class="form-group">
                 <label [focusInput]="idInput">Régime / A2X</label>
-                <ion-input class="default-input-style" id="id" name="id" [(ngModel)]="regime._id" #idInput required
+                <ion-input class="default-input-style" id="id" name="id" [ngModel]="regime._id"
+                    (ngModelChange)="regime._id = $event.toUpperCase()" #idInput required
                     [disabled]="action === 'edit' ? true : false"></ion-input>
             </div>
             <div class="form-group">
                 <label [focusInput]="requestNumberInput">Demande</label>
                 <ion-input class="default-input-style" id="requestNumber" name="requestNumber"
-                    [(ngModel)]="regime.requestNumber" #requestNumberInput></ion-input>
+                    [ngModel]="regime.requestNumber" (ngModelChange)="regime.requestNumber = $event.toUpperCase()"
+                    #requestNumberInput></ion-input>
             </div>
             <div class="form-group">
                 <label [focusInput]="otInput">OT</label>
-                <ion-input class="default-input-style" id="ot" name="ot" [(ngModel)]="regime.ot" #otInput></ion-input>
+                <ion-input class="default-input-style" id="ot" name="ot" [ngModel]="regime.ot"
+                    (ngModelChange)="regime.ot = $event.toUpperCase()" #otInput></ion-input>
             </div>
             <div class="form-group">
                 <label [focusInput]="rfInput">RF</label>
