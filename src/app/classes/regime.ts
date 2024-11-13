@@ -1,12 +1,12 @@
 export class Regime {
     _id: string
     requestNumber: string
-    ot: number
+    ot: string
     rf: string
     label: string
     state: RegimeState
 
-    constructor(id: string = '', requestNumber: string = '', ot: number = 0, rf: string = '', label: string = '', state: RegimeState = RegimeState.AUTHORIZED) {
+    constructor(id: string = '', requestNumber: string = '', ot: string = '', rf: string = '', label: string = '', state: RegimeState = RegimeState.AUTHORIZED) {
         this._id = id
         this.requestNumber = requestNumber
         this.ot = ot
