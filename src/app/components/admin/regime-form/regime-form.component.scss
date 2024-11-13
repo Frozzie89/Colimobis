@@ -28,3 +28,12 @@
     width: 100%;
     margin-top: 5px;
 }
+
+
+@media (min-width: 600px) {
+
+    .scrollable {
+        min-height: calc(100vh + 230px);
+    }
+
+}
