@@ -1,9 +1,7 @@
 # Colimobis
 
 ## Project overview
-This app manages work permits states depending on their advacement and the state of of the installation.
-It can record state changings to track them.
-It includes an admin account to add, modify and erase work permits and to track state changings.
+Colimobis is an app designed to manage and track the status of work permits, monitoring their progress and the state of installations. It allows users to log status changes for detailed tracking. The app includes an admin account for adding, modifying, and deleting work permits, as well as overseeing status updates.
 
 ## Platform Support
 
