@@ -6,12 +6,13 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { RegimeDescriptionComponent } from "../../modules/regime-description/regime-description.component";
 import { HeaderComponent } from "../../modules/header/header.component";
+import { NgIf } from '@angular/common';
 
 @Component({
     selector: 'app-regime-withdraw',
     templateUrl: './regime-withdraw.component.html',
     styleUrls: ['./regime-withdraw.component.scss'],
-    imports: [IonContent, IonIcon, RegimeStatusComponent, RegimeDescriptionComponent, RouterModule, HeaderComponent],
+    imports: [IonContent, IonIcon, RegimeStatusComponent, RegimeDescriptionComponent, RouterModule, HeaderComponent, NgIf],
     standalone: true
 })
 export class RegimeWithdrawComponent implements OnInit {
@@ -19,6 +20,7 @@ export class RegimeWithdrawComponent implements OnInit {
     regime!: Regime
     idRegime!: string
     title = 'Démarrer un chantier'
+    isDisclaimerChecked = false
 
     constructor(
         private route: ActivatedRoute,
@@ -37,6 +39,10 @@ export class RegimeWithdrawComponent implements OnInit {
     back(): void {
         const searchTerm = history.state.searchTerm
         this.router.navigate(['regime-list', searchTerm])
+    }
+
+    disclaimerCheckToggle() {
+        this.isDisclaimerChecked = !this.isDisclaimerChecked
     }
 
 }
