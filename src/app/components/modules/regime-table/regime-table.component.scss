@@ -58,9 +58,9 @@ tr:nth-child(even) {
 }
 
 
-/* Hide non-essential columns on small screens */
 @media (max-width: 600px) {
 
+    /* Hide non-essential columns on small screens */
     .label-col,
     .RF-col,
     .OT-col {
@@ -71,11 +71,32 @@ tr:nth-child(even) {
     .demande-col {
         width: 50%;
     }
+
+    tbody {
+
+        th,
+        td {
+            font-size: large;
+            height: 2em;
+        }
+    }
+
 }
 
-/* Hides messages on large screens */
 @media (min-width: 601px) {
+
+    /* Hides messages on large screens */
     .orientation-message {
         display: none;
     }
+
+    tbody {
+
+        th,
+        td {
+            font-size: x-large;
+            height: 2em;
+        }
+    }
+
 }
