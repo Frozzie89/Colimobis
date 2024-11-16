@@ -6,13 +6,16 @@
 
     <div class="warning-msg">
 
-        <div class="icon-wrapper">
+        <div class="icon-wrapper" (click)="disclaimerCheckToggle()">
             <div class="white-square">
-                <div class="orange-square"></div>
+                <div *ngIf="isDisclaimerChecked" class="orange-square"></div>
             </div>
         </div>
 
-        <p class="disclaimer">En déclarant de mon chantier, <strong>JE M'ENGAGE</strong> à vérifier les points clé de
+        <p class=" disclaimer" (click)="disclaimerCheckToggle()">En déclarant de mon chantier, <strong>JE
+                M'ENGAGE</strong>
+            à
+            vérifier les points clé de
             mon
             intervention <strong>AVANT</strong> démarage sur le terrain, car ils garantissent <strong>MA
                 SECURITÉ</strong>.
@@ -25,7 +28,7 @@
             <ion-icon name="arrow-back-circle"></ion-icon>
             <span>Retour</span>
         </button>
-        <button class="coli-btn coli-btn-w-icon report-btn" [routerLink]="'print'">
+        <button class="coli-btn coli-btn-w-icon report-btn" [routerLink]="'print'" [disabled]="!isDisclaimerChecked">
             <ion-icon name="create"></ion-icon>
             <span>Déclarer le démarrage</span>
         </button>
