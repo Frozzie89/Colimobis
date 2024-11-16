@@ -24,7 +24,7 @@ export class RegimeSearchComponent implements OnInit {
     }
 
     queryRegimes(regimeId: string): void {
-        this.router.navigate(['regime-list', regimeId])
+        this.router.navigate(['regime-list', regimeId.toUpperCase()])
     }
 
 }
