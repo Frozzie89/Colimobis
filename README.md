@@ -1,7 +1,9 @@
 # Colimobis
 
 ## Project overview
-TBD
+This app manages work permits states depending on their advacement and the state of of the installation.
+It can record state changings to track them.
+It includes an admin account to add, modify and erase work permits and to track state changings.
 
 ## Platform Support
 
