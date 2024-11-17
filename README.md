@@ -1,6 +1,10 @@
 # Colimobis
 
-## Project overview
+<p align="center">
+  <img src="src/assets/icons/icon-192.webp" alt="Colimobis icon"/>
+</p>
+
+
 Colimobis is an app designed to manage and track the status of work permits, monitoring their progress and the state of installations. It allows users to log status changes for detailed tracking. The app includes an admin account for adding, modifying, and deleting work permits, as well as overseeing status updates.
 
 ## Platform Support
