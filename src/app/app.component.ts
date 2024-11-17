@@ -4,6 +4,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 import { RegimeDataService } from './service/regime-data.service';
 import { Platform } from '@ionic/angular';
 import { AuditDataService } from './service/audit-data.service';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
     selector: 'app-root',
@@ -20,15 +21,15 @@ export class AppComponent {
         this.initApp()
     }
 
-    initApp() {
+    async initApp() {
         if (this.platform.is('capacitor')) {
             StatusBar.setBackgroundColor({ color: '#00008b' })
             StatusBar.hide()
             StatusBar.setOverlaysWebView({ overlay: true })
         }
 
-        this.regimeService.getAllRegimes()
-        this.auditService.cleanOldAudits()
-
+        await this.regimeService.getAllRegimes()
+        await this.auditService.cleanOldAudits()
+        SplashScreen.hide()
     }
 }

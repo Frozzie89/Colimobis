@@ -72,3 +72,4 @@ Thumbs.db
 # Colimobis
 src/assets/data/*
 .env
+resources/android/**/*
