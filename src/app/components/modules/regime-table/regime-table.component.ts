@@ -3,13 +3,13 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { Regime } from 'src/app/classes/regime';
 import { EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IonButton, IonIcon } from '@ionic/angular/standalone';
+import { IonIcon } from '@ionic/angular/standalone';
 
 @Component({
     selector: 'module-regime-table',
     templateUrl: './regime-table.component.html',
     styleUrls: ['./regime-table.component.scss'],
-    imports: [NgFor, NgIf, FormsModule, IonButton, IonIcon],
+    imports: [NgFor, NgIf, FormsModule, IonIcon],
     standalone: true
 })
 export class RegimeTableComponent implements OnInit {

@@ -16,7 +16,7 @@ export class RegimeStatusComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.message = this.regime.state === RegimeState.DEMARRE ? 'et sera couvert par le' : 'et couvert par le'
+        this.message = this.regime.state === RegimeState.STARTED ? 'et sera couvert par le' : 'et couvert par le'
     }
 
 }

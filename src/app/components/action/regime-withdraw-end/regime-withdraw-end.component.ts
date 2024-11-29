@@ -33,7 +33,7 @@ export class RegimeWithdrawEndComponent implements OnInit {
             let regime = Regime.fromJson(regimeJson);
 
             const previousState = regime.state; // Capture the previous state
-            regime.state = RegimeState.DEMARRE;
+            regime.state = RegimeState.STARTED;
 
             // Update the regime and then create an audit entry
             this.regimeService.update(regime).then(() => {

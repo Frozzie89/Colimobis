@@ -41,5 +41,5 @@ export enum RegimeState {
     AUTHORIZED = 'AUTORISÉ',
     ERROR = 'ERREUR',
     RETURNED_UNDONE = 'RENDU NON-TERMINÉ',
-    DEMARRE = 'DÉMARRÉ'
+    STARTED = 'DÉMARRÉ'
 }

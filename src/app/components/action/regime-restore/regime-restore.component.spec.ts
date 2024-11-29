@@ -13,7 +13,7 @@ describe('RegimeRestoreComponent', () => {
     let fixture: ComponentFixture<RegimeRestoreComponent>
     let regimeService: jasmine.SpyObj<RegimeDataService>
 
-    const mockRegimeJson = { _id: '0', requestNumber: '1234', ot: 1, rf: '1', label: 'test', state: RegimeState.DEMARRE }
+    const mockRegimeJson = { _id: '0', requestNumber: '1234', ot: 1, rf: '1', label: 'test', state: RegimeState.STARTED }
 
     beforeEach(waitForAsync(() => {
         const regimeServiceSpy = jasmine.createSpyObj('RegimeDataService', ['regimeList$'])
