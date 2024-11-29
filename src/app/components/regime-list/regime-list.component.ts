@@ -51,10 +51,6 @@ export class RegimeListComponent implements OnInit {
         }
     }
 
-    onRadioButtonChange(element: any) {
-        this.regimeList = this.regimeList.filter(regime => regime.state === RegimeState.STARTED)
-    }
-
 }
 
 enum RegimeActionForm {
