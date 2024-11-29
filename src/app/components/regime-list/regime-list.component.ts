@@ -1,7 +1,6 @@
-import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Regime } from 'src/app/classes/regime';
+import { Regime, RegimeState } from 'src/app/classes/regime';
 import { RegimeDataService } from 'src/app/service/regime-data.service';
 import { IonContent, IonGrid, IonRow, IonCol, IonIcon } from '@ionic/angular/standalone';
 import { FormsModule } from '@angular/forms';
@@ -18,7 +17,8 @@ import { RegimeTableComponent } from "../modules/regime-table/regime-table.compo
 export class RegimeListComponent implements OnInit {
 
     regimeList: Regime[] = []
-    regimeAction = -1
+    regimeFilteredList: Regime[] = []
+    regimeAction: RegimeActionForm = RegimeActionForm.NONE
     searchTerm = ''
     title = 'Sélection d\'attestations'
 
@@ -30,7 +30,10 @@ export class RegimeListComponent implements OnInit {
 
     ngOnInit() {
         this.searchTerm = this.route.snapshot.params['search']
-        this.regimeService.regimeList$.subscribe(regimes => this.regimeList = regimes.filter(regime => regime._id?.includes(this.searchTerm)))
+        this.regimeService.regimeList$.subscribe(regimes => {
+            this.regimeList = regimes.filter(regime => regime._id?.includes(this.searchTerm))
+            this.regimeFilteredList = this.regimeList.filter(regime => regime.state === RegimeState.STARTED)
+        })
     }
 
     moveBack() {
@@ -47,9 +50,15 @@ export class RegimeListComponent implements OnInit {
                 break;
         }
     }
+
+    onRadioButtonChange(element: any) {
+        this.regimeList = this.regimeList.filter(regime => regime.state === RegimeState.STARTED)
+    }
+
 }
 
 enum RegimeActionForm {
+    NONE = -1,
     REMOVE_ACTION = 0,
     WITHDRAW_ACTION,
     PRINT_ACTION
