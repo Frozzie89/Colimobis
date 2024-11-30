@@ -51,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: unsigned-android-apk
-          path: android/app/build/outputs/apk/debug/colimobis-debug.apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
