@@ -73,3 +73,4 @@ Thumbs.db
 src/assets/data/*
 .env
 resources/android/**/*
+keystore.jks*
