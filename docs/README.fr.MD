@@ -20,7 +20,7 @@ Cette application est destinée à être utilisée sur **Android** et a été d�
 ## Prérequis
 - Node.js (version 22.9.0 or plus)
 - [Ionic CLI](https://www.npmjs.com/package/@ionic/cli)
-- Capacitor CLI (comes with Ionic)
+- Capacitor CLI (fourni Ionic)
 
 ## Installation
 1. Cloner the dépôt : 
