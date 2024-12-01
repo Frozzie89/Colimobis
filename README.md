@@ -1,4 +1,6 @@
 # Colimobis
+[🇫🇷 Français](docs/README.fr.MD)
+
 ![GitHub Tag](https://img.shields.io/github/v/tag/Frozzie89/Colimobis)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Frozzie89/Colimobis/android-build-signed.yml)
 ![GitHub License](https://img.shields.io/github/license/Frozzie89/Colimobis)
@@ -47,7 +49,7 @@ To build and run the app locally without Docker, follow these steps :
     $ docker-compose up --build
     ```
 
-    This command will build the Docker image, install dependencies and start the ionic development server.
+    This command will build the Docker image, install dependencies and start the Ionic development server.
 
 2. Access the app :
     
