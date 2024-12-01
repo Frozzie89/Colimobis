@@ -1,4 +1,8 @@
 # Colimobis
+![GitHub Tag](https://img.shields.io/github/v/tag/Frozzie89/Colimobis)
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/Frozzie89/Colimobis/android-build-signed.yml)
+![GitHub License](https://img.shields.io/github/license/Frozzie89/Colimobis)
+![Platform](https://img.shields.io/badge/platform-Android-blue)
 
 <p align="center">
   <img src="src/assets/icons/icon-192.webp" alt="Colimobis icon"/>
